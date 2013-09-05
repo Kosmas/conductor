@@ -1,3 +1,6 @@
+{<img src="https://codeclimate.com/github/Kosmas/conductor.png" />}[https://codeclimate.com/github/Kosmas/conductor]
+{<img src="https://gemnasium.com/Kosmas/conductor.png" alt="Dependency Status" />}[https://gemnasium.com/Kosmas/conductor]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
