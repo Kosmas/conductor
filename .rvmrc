@@ -1,0 +1,2 @@
+rvm use default
+rvm gemset use rails2_4_0
