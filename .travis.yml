@@ -1,0 +1,11 @@
+rvm:
+	- 2.0.0
+
+# whitelist
+branches:
+	only:
+		- master
+
+notifications:
+	email:
+		- kosmas@mach7x.com
