@@ -14,6 +14,10 @@
 </head>
 <body>
 
+<nav>
+	<%= link_to 'Sign up', new_user_path %>
+</nav>
+
 <%= flash.each do |key,value| %>
   <div class='flash' id='<%= key %>'
     <%= value %>
