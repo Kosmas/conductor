@@ -16,4 +16,17 @@ class SessionsController < ApplicationController
 			render :new
 		end
 	end
+
+	def destroy
+		@_current_user = session[:user_id] = nil
+		flash[:notice] = 'Signed out successfully.'
+
+		redirect_to root_url
+	end
+
+	private
+
+	def current_user
+		@_current_user ||= session[:user_id] && User.find_by(id: session[:user_id])
+	end
 end
