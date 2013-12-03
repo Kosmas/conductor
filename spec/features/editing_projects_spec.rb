@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature 'Editing Projects' do
   before do
+		sign_in_as!(FactoryGirl.create(:admin_user))
     FactoryGirl.create(:project, name: 'Vim')
 
     visit '/'

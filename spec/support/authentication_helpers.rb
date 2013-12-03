@@ -8,6 +8,13 @@ module AuthenticationHelpers
 	end
 end
 
+module AuthHelpers
+	def sign_in(user)
+		session[:user_id] = user.id
+	end
+end
+
 RSpec.configure do |c|
 	c.include AuthenticationHelpers, type: :feature
+	c.include AuthHelpers, type: :controller
 end
