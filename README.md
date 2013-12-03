@@ -1,5 +1,5 @@
-{<img src="https://codeclimate.com/github/Kosmas/conductor.png" />}[https://codeclimate.com/github/Kosmas/conductor]
-{<img src="https://gemnasium.com/Kosmas/conductor.png" alt="Dependency Status" />}[https://gemnasium.com/Kosmas/conductor]
+[![Code Climate](https://codeclimate.com/github/Kosmas/conductor.png)](https://codeclimate.com/github/Kosmas/conductor)
+[![Dependency Status](https://gemnasium.com/Kosmas/conductor.png)](https://gemnasium.com/Kosmas/conductor)
 
 == README
 
