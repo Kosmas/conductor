@@ -280,9 +280,21 @@ ___26 examples, 0 failures___
 should be
 ___28 examples, 0 failures___
 
-#### PDF Page 209
+#### PDF Page 209, 213, 214
 * Shouldn't the actual capybara helper have_link be used instead of custom ones? 
-like: expect(page).to_not have_link('New Project')
+like: 
+
+```ruby
+expect(page).to_not have_link('New Project')
+...
+expect(page).to have_link('New Project')
+```
+
+#### PDF Page 215
+* in the spec results 
+___31 examples, 0 failures___
+should be
+___37 examples, 0 failures___
 
 <!-- 
  
