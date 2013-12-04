@@ -241,51 +241,51 @@ __expected to find text__
 #### PDF Page 196
 __22 examples, 0 failures__
 should be
-___23 examples, 0 failures__
+__23 examples, 0 failures__
+
+#### PDF Page 201
+__Create projects_controller_spec.rb__ is already created in previous chapters.
+
+#### PDF Page 203
+* Shouldn't the authentication_helpers.rb include the previous method, so should it be like the following?
+
+```ruby
+   # spec/support/authentication_helpers.rb
+   
+   module AuthenticationHelpers
+     def sign_in_as!(user)
+       visit '/signin'
+       fill_in 'Name', with: user.name
+       fill_in 'Password', with: user.password
+       click_button 'Sign in'
+       expect(page).to have_content('Signed in successfully.')
+     end
+   end
+
+   module AuthHelpers
+     def sign_in(user)
+       session[:user_id] = user.id
+     end
+   end
+
+   RSpec.configure do |c|
+     c.include AuthenticationHelpers, type: :feature
+     c.include AuthHelpers, type: :controller
+   end
+```
+
+#### PDF Page 204
+* in the spec results text
+___26 examples, 0 failures___
+should be
+___28 examples, 0 failures___
+
+#### PDF Page 209
+* Shouldn't the actual capybara helper have_link be used instead of custom ones? 
+like: expect(page).to_not have_link('New Project')
 
 <!-- 
  
-#### PDF Page 185 + 189
-* @ticket.user.email (tickets and users may be related, and may be manually set on edit specs for example, but the relationship is never built during the create action in the ticket controller, which obviously causes failures in the following spec)
-
-```ruby
-  within "#ticket #author" do
-    expect(page).to have_content("Created by sample@example.com")
-  end
-```
-
-#### PDF Page 187
-* as above, 'User Name' does not exist, 'Name' does, same recommendations apply.
-* ```within("h2") { expect(page).to have_content("New Ticket") }``` exists in the spec, but the show project page (the page the user would be on after signing in doesn't have this content)
-
-#### PDF Page 188
-* Author awknowledges that he forgot to write require_signin! method, and then says to use the following code to implement it, but includes no code. Here's what I wrote:
-
-```ruby
-  # application_controller.rb
-  private
-
-    def require_signin!
-      unless session[:user_id].present?
-        flash[:alert] = "You need to sign in or sign up before continuing."
-        redirect_to signin_path
-      end
-    end
-```
-
-#### PDF Page 196
-* as above, 'User Name' does not exist, 'Name' does, same recommendations apply.
-
-#### PDF Page 204
-* Forgets to include the following spec created earlier, or include "..." probably as a result of PDF Page 175, rm -rf issue noted above.
-
-```ruby
-  it "displays an error for a missing project" do
-    get :show, :id => "not-here"
-    expect(response).to redirect_to(projects_path)
-    message = "The project you were looking for could not be found."
-    expect(flash[:alert]).to eql(message)
-  end
 ```
 
 * Mentions "...Just like with the email_spec helper methods in the previous chapter..." which the reader hasn't created.
