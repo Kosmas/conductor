@@ -61,6 +61,7 @@ Conductor::Application.routes.draw do
 	get '/signout', to: 'sessions#destroy'
 
 	namespace :admin do
+		root to: 'base#index'
 		resources :users
 	end
 end
