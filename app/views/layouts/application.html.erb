@@ -18,18 +18,19 @@
 	<ul>
 		<% if current_user %>
 			Signed in as <%= current_user.email %>
+			<li><%== link_to 'Sign out', signout_path %></li>
 			<% admins_only do %>
 				<li><%= link_to 'Admin', admin_root_path %></li>
 			<% end %>
+		<% else %>
+			<li><%= link_to 'Sign up', new_user_path %></li>
+			<li><%= link_to 'Sign in', signin_path %></li>
 		<% end %>
-		<li><%= link_to 'Sign up', new_user_path %></li>
-		<li><%= link_to 'Sign in', signin_path %></li>
-		<li><%= link_to 'Sign out', signout_path %></li>
 	</ul>
 </nav>
 
-<%= flash.each do |key,value| %>
-  <div class='flash' id='<%= key %>'
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
     <%= value %>
   </div>
 <% end %>
