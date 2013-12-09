@@ -294,46 +294,99 @@ expect(page).to have_link('New Project')
 * in the spec results 
 ___31 examples, 0 failures___
 should be
+___36 examples, 0 failures___
+
+#### PDF Page 221
+* in the spec results
+___34 examples, 0 failures___
+should be
+___39 examples, 0 failures___
+
+#### PDF Page 221
+* in the spec results
+___36 examples, 0 failures___
+should be
 ___37 examples, 0 failures___
 
-<!-- 
- 
+#### PDF Page 223
+* user_signed_in? method is mentioned in the text but current_user is used in listing
+
+#### PDF Page 223
+* change to new ruby hash syntax
+___:to => "base#index"___
+should be
+___to: "base#index"___
+
+#### PDF Page 227
+* change to new ruby hash syntax
+___render :action => "new"___
+should be
+___render action: "new"___
+
+#### PDF Page 228
+* The error page when running the spec should not be there as the specs pass
+
+#### PDF Page 228
+* in the spec results
+___37 examples, 0 failures___
+should be
+___38 examples, 0 failures___
+
+#### PDF Page 230
+* in the rspec results
+___expected there to be content___
+should be
+___expected to find text___
+
+#### PDF Page 231
+* in the two paragraphs:
+___what gives? ....___ and ___the answer is strong parameters___
+not having the admin field in the strong parameters prevents the record from being saved, but the test will still fail as the email displayed is from the current user and not the just created one. So we would prbably do one of the following:
+* remove the check for the new user email
+* display the new user email in the flash message
+* log out and login as the new user
+
+#### PDF Page 232
+* Typo 
+___accessable___
+should be
+___accessible___
+
+#### PDF Page 234
+* Shouldn't it be a good idea to enclose the user model spec for email in a describe 'email' ?
+
+#### PDF Page 236
+* password_confirmation missing from the user factory
+
+#### PDF Page 240
+* the update method should be:
+
+```ruby
+def update
+  if user_params[:password].blank?
+    user_params.delete(:password)
+    user_params.delete(:password_confirmation)
+  end
+
+  if @user.update_attributes(user_params)
+    flash[:notice] = 'User has been updated.'
+
+    redirect_to admin_users_path
+  else
+    flash[:alert] = 'User has not been updated.'
+
+    render action: 'edit'
+  end
+end
+
 ```
 
-* Mentions "...Just like with the email_spec helper methods in the previous chapter..." which the reader hasn't created.
+#### PDF Page 242
+___41 examples, 0 failures___
+should be
+___42 examples, 0 failures___
 
-#### PDF Page 206
-* current_user method called, but not created.
-
-
-#### PDF Page 225
-* talks about user_signed_in? method, but again, not created. Probably AWOL with the current_user method ;)
-
-#### PDF Page 225
-* Needs a password_confirmation field on the admin user form to pass. Also, need to use user_password user_password_confirmation to avoid ambiguity.
-
-## Recommendations/Suggestions
-* DRY up code by moving all _form.html.erb error messages into a single partial
-* Is there a reason why we do ```textmate_2 = FactoryGirl.create(:project, name: "TextMate 2")``` etc... rather than let!?
-
-#### PDF Page 179
-* requiring the button to say "Update Profile" may be a little too hard for new users given the partial already specifies <%= f.submit "Sign up" %>
- * Personal opinion is that I think most new users would solve this problem by duplicating the code already in the _form partial.
- * recommended approach, just use <%= f.submit %> in the partial and modify the sign_up spec and the profile spec to use "Create User" and "Update User"
- * fwiw I solved it like this:
-
- ```ruby
- #users_helper.rb
-  def text_for_submit_button
-    if params[:action] == ("edit" || "update")
-      "Update Profile"
-    else
-      "Sign up"
-    end
-  end
- ```
- ```ruby
- # _form.html.erb
- <%= f.submit text_for_submit_button %>
- ```-->
-
+#### PDF Page 246
+___43 examples, 0 failures___
+should be
+___44 examples, 0 faulures___
