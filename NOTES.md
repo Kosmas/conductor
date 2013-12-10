@@ -2,7 +2,7 @@
 The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working throught the pre-release version of the book. Suggestions and issues with the pre-release noted below.
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v11
+### MEAP v11 
 
 #### PDF Page 6
 * The .rvmrc has been deprecated in favour of .ruby-version and .ruby-gemse
@@ -390,3 +390,15 @@ ___42 examples, 0 failures___
 ___43 examples, 0 failures___
 should be
 ___44 examples, 0 faulures___
+
+#### PDF Page 259
+* There is no failure if the spec for 'displaying an error for a missing project' mentioned in page 202 is inside the 'standard users' context
+
+#### PDF Page 262
+* in the rspec results
+___expected there to be content___ 
+should be
+___expected to find text___
+
+#### PDF Page 271
+* In figure 8.3 the links 'Forgot your password', 'Did not receive confirmation instructions?' and the tick box 'Remember me' have not been added previously.
