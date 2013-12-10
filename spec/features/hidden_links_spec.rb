@@ -26,14 +26,14 @@ feature 'hidden links' do
   end
 
   context 'regular users' do
-		before { sign_in_as!(user) }
-		scenario 'cannot see the New Project link' do
-			visit '/'
+    before { sign_in_as!(user) }
+    scenario 'cannot see the New Project link' do
+      visit '/'
 
-			expect(page).to_not have_link('New Project')
-		end
+      expect(page).to_not have_link('New Project')
+    end
 
-		scenario 'cannot see the Edit Project link' do
+    scenario 'cannot see the Edit Project link' do
       visit project_path(project)
 
       expect(page).to_not have_link('Edit Project')
@@ -41,12 +41,12 @@ feature 'hidden links' do
 
     scenario 'cannot see the Delete Project link' do
       visit project_path(project)
-  
+
       expect(page).to_not have_link('Edit Project')
     end
-	end
+  end
 
-	context 'admin users' do
+  context 'admin users' do
     before { sign_in_as!(admin) }
     scenario 'can see the New Project link' do
       visit '/'

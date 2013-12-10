@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
-	before_action :authorize_admin!
+  before_action :authorize_admin!
 
-	def index
-	end
+  def index
+  end
 end
