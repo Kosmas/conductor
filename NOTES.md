@@ -505,3 +505,7 @@ should be:
 #### PDF Page 304
 * cucumber test left over?
 ___And I follow "Permissions"___
+
+#### PDF Page 316
+* figure 8.5 signed in as ___ticketee@example.com___ should be ___admin@example.com___ that was set in the seeds file.
+* There should only be one project from the seeds file and not the second (Top secret project)
