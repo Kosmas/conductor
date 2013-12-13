@@ -2,7 +2,7 @@
 The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working throught the pre-release version of the book. Suggestions and issues with the pre-release noted below.
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v11 
+### MEAP v11
 
 #### PDF Page 6
 * The .rvmrc has been deprecated in favour of .ruby-version and .ruby-gemse
@@ -124,7 +124,7 @@ should be with using the new syntax
 __user = User.where(name: params[:signin][:name]).first__
 
 #### PDF Page 183
-* Shouldn't it be a 'Sign out' section after 'Sign up' and 'Sign in' ?
+* Shouldn't it be a 'Sign out' section after 'Sign up' and 'Sign in' ? (NOTE: This is added in chapter 8 with the permissions index page)
 
 ```ruby
    # spec/features/sign-out-spec.rb
@@ -402,3 +402,106 @@ ___expected to find text___
 
 #### PDF Page 271
 * In figure 8.3 the links 'Forgot your password', 'Did not receive confirmation instructions?' and the tick box 'Remember me' have not been added previously.
+
+#### PDF Page 273
+* change hash syntax to 1.9
+___:id => ticket.id, :project_id => project.id___
+should be
+___id: ticket.id, project_id: project.id___
+
+#### PDF Page 277
+* convert rspec expectations to new expect instead of should syntax
+
+```ruby
+response.should redirect_to(project)
+message = "You cannot create tickets on this project"
+flash[:alert].should eql(message)
+```
+
+should be
+
+```ruby
+expect(response).to redirect_to(project)
+expect(flash[:alert]).to eql('You cannot create tickets on this project')
+```
+
+#### PDF Page 285
+* in the before filters is the authorize_admin! needed as in previous pages was missing and tests run without it? We also have require_signing that is missing from listing 8.9
+
+#### PDF Page 287
+* for consistency and to be similar to previous rspecs we do not need to set the message variable, so:
+
+
+```ruby
+message = "You cannot delete tickets from this project."
+expect(flash[:alert]).to eql(message)
+```
+
+should be:
+
+```ruby
+expect(flash[:alert]).to eql('You cannot delete tickets from this project.')
+```
+    
+#### PDF Page 289, 290
+* rspec link expectations
+___assert_link_for "Link Name"___
+should be
+___expect(page).to have_link('Link Name')___
+
+#### PDF Page 290
+* the to_sym should be used as in previous code
+___<% authorized?(:"create tickets", @project) do %>___
+should be
+___<% authorized?("create tickets".to_sym, @project) do %>___
+
+#### PDF Page 291
+* comment tag missing from permissions:
+___permissions__
+should be
+___#permissions___
+
+#### PDF Page 291, 292
+* rspec link expectations
+___assert_link_for 'Link Name'___
+should be
+___expect(page).to have_link('Link Name')___
+
+#### PDF Page 293
+* the <%= tag is incorrect:
+___<%= authorized?("edit tickets", @project) do %>___
+should be
+____<% authorized?("edit tickets".to_sym, @project) do %>___
+
+#### PDF Page 294, 295
+* rspec link expectations
+___assert_link_for 'Link Name'___
+should be
+___expect(page).to have_link('Link Name')___
+
+#### PDF Page 302
+* new ruby hash syntax
+___:method => :put___
+should be
+___method: :put___
+
+#### PDF Page 302
+* the checkbox tag is incorrect on the first listing (page 302) but correct on second listing (page 305):
+
+```ruby
+<%= check_box_tag "permissions[#{project.id}][#{name}]",
+@ability.can?(name.to_sym, project),
+@ability.can?(name.to_sym, project) %>
+```
+
+should be:
+
+```ruby
+<%= check_box_tag "permissions[#{project.id}][#{name}]",
+1,
+@ability.can?(name.to_sym, project) %>
+```
+
+#### PDF Page 304
+* cucumber test left over?
+___And I follow "Permissions"___
