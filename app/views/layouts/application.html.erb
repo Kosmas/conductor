@@ -7,7 +7,7 @@
     <% else %>
       Conductor
     <% end %>
-  </title>
+   </title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -15,18 +15,18 @@
 <body>
 
 <nav>
-	<ul>
-		<% if current_user %>
-			Signed in as <%= current_user.email %>
-			<li><%= link_to 'Sign out', signout_path, method: :delete %></li>
-			<% admins_only do %>
-				<li><%= link_to 'Admin', admin_root_path %></li>
-			<% end %>
-		<% else %>
-			<li><%= link_to 'Sign up', new_user_path %></li>
-			<li><%= link_to 'Sign in', signin_path %></li>
-		<% end %>
-	</ul>
+  <ul>
+    <% if current_user %>
+      Signed in as <%= current_user.email %>
+      <li><%= link_to 'Sign out', signout_path, method: :delete %></li>
+      <% admins_only do %>
+        <li><%= link_to 'Admin', admin_root_path %></li>
+      <% end %>
+    <% else %>
+      <li><%= link_to 'Sign up', new_user_path %></li>
+      <li><%= link_to 'Sign in', signin_path %></li>
+    <% end %>
+  </ul>
 </nav>
 
 <% flash.each do |key, value| %>
