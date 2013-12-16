@@ -509,3 +509,101 @@ ___And I follow "Permissions"___
 #### PDF Page 316
 * figure 8.5 signed in as ___ticketee@example.com___ should be ___admin@example.com___ that was set in the seeds file.
 * There should only be one project from the seeds file and not the second (Top secret project)
+
+#### PDF Page 323
+* listing 9.3 shows a different section for created by from previous chapter and the edit and delete links are missing:
+
+```ruby
+<small>Created by <%= @ticket.user.email %></small>
+<%= simple_format(@ticket.description) %>
+<% if @ticket.asset.present? %>
+  <h3>Attached File</h3>
+  <div class="asset">
+    <p>
+      <%= link_to File.basename(@ticket.asset.path),@ticket.asset.url %>
+    </p>
+    <p>
+      <small><%= number_to_human_size(@ticket.asset.size) %></small>
+    </p>
+  </div>
+<% end %>
+
+```
+should be
+
+```ruby
+<div id="ticket">
+  <h2><%= @ticket.title %></h2>
+  <span id='author'>Created by <%= @ticket.user.email %></span>
+
+  <% authorized?('edit tickets'.to_sym, @project) do %>
+    <%= link_to 'Edit Ticket', [:edit, @project, @ticket] %>
+  <% end %>
+  <% authorized?('delete tickets', @project) do %>
+    <%= link_to 'Delete Ticket', [@project, @ticket], method: :delete, data: { confirm: 'Are you sure you want to delete this ticket?' } %>
+  <% end %>
+
+  <%= simple_format(@ticket.description) %>
+
+  <% if @ticket.asset.present? %>
+    <h3>Attached File</h3>
+    <div class='asset'>
+      <p>
+        <%= link_to File.basename(@ticket.asset.path), @ticket.asset.url %>
+      </p>
+      <p>
+        <small><%= number_to_human_size(@ticket.asset.size) %></small>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+```
+
+#### PDF Page 324
+* current version of CarrierWve is 0.9.0
+___gem 'carrierwave', '0.8.0'___
+should be
+___gem 'carrierwave', '~> 0.9.0'___
+
+#### PDF Page 325
+* typo in first paragraph in :
+___ and gives four application the ability to accept and process this file.___
+
+#### PDF Page 326, 327
+* typo in the directory before code listing:
+___public/system___
+should be
+___public/uploads___
+
+#### PDF Page 334
+* cucumber test lefover? 
+___And I follow "New Ticket"___
+
+#### PDF Page 334
+* After creating the model the uploader should be moved from the ticket model to the asset model:
+
+```ruby
+mount_uploader :asset, AssetUploader
+```
+
+as otherwise the following error is diplayed:
+
+```ruby
+Failure/Error: click_button 'Create Ticket'
+  ActiveRecord::StatementInvalid:
+  TypeError: can't cast ActionDispatch::Http::UploadedFile to string: INSERT INTO "assets" ("asset", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?)                                                                                                                                                
+  # ./app/controllers/tickets_controller.rb:17:in `create'
+  # ./spec/features/creating_tickets_spec.rb:52:in `block (2 levels) in <top (required)>'
+```
+
+#### PDF Page 345
+* the user is created from the seeds file and the:
+___ticketee@example.com___
+should be
+___admin@example.com___
+
+* the link for the file:
+___http://localhost:3000/system/assets/5/original/spin.txt?1282564953___
+should be:
+___http://localhost:3000/uploads/asset/asset/1/spin.txt___
