@@ -1,5 +1,5 @@
 # Rails 4 in Action
-The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working throught the pre-release version of the book. Suggestions and issues with the pre-release noted below.
+The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working through the pre-release version of the book. Suggestions and issues with the pre-release noted below.
 
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v11
@@ -17,6 +17,9 @@ rvm gemset use rails4_0_0
 gem install rails -v 4.0.0
 
 ```
+
+### PDF Page 28
+* Rails 4 generates code using `update` the text on this page references `update_attributes` which doesn't exist anymore.
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
