@@ -22,8 +22,8 @@ gem install rails -v 4.0.0
 * Rails 4 generates code using `update` the text on this page references `update_attributes` which doesn't exist anymore.
 
 #### PDF Page 40
-* Running the provided provides a different error `.rvm/gems/ruby-2.0.0-p0/gems/minitest-4.7.5/lib/minitest/unit.rb:19:in `const_missing': uninitialized constant MiniTest::Test (NameError)
-	from bacon_test.rb:3:in `<main>'`
+* Running the provided provides a different error `.rvm/gems/ruby-2.0.0-p0/gems/minitest-4.7.5/lib/minitest/unit.rb:19:in \`const_missing\': uninitialized constant MiniTest::Test (NameError)
+	from bacon_test.rb:3:in \`<main>\'`
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
