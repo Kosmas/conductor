@@ -18,7 +18,7 @@ gem install rails -v 4.0.0
 
 ```
 
-### PDF Page 28
+#### PDF Page 28
 * Rails 4 generates code using `update` the text on this page references `update_attributes` which doesn't exist anymore.
 
 #### PDF Page 83
