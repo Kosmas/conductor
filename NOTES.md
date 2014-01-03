@@ -1,5 +1,5 @@
 # Rails 4 in Action
-The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working throught the pre-release version of the book. Suggestions and issues with the pre-release noted below.
+The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working through the pre-release version of the book. Suggestions and issues with the pre-release noted below.
 
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v11
@@ -17,6 +17,18 @@ rvm gemset use rails4_0_0
 gem install rails -v 4.0.0
 
 ```
+
+#### PDF Page 28
+* Rails 4 generates code using `update` the text on this page references `update_attributes` which doesn't exist anymore.
+
+#### PDF Page 40
+* Running the given code provides a different error 
+
+> .rvm/gems/ruby-2.0.0-p0/gems/minitest-4.7.5/lib/minitest/unit.rb:19:in 'const_missing': uninitialized
+> constant MiniTest::Test (NameError)
+>	from bacon_test.rb:3:in `<main>'
+
+This is because most users at this point will have minitest 4.7.5 installed. There should be an instruction to run `sudo gem install minitest` in order to install 5.x. Afterwards it works as expected in the text.
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
