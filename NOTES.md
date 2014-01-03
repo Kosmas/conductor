@@ -28,6 +28,8 @@ gem install rails -v 4.0.0
 > constant MiniTest::Test (NameError)
 >	from bacon_test.rb:3:in `<main>'
 
+This is because most users at this point will have minitest 4.7.5 installed. There should be an instruction to run `sudo gem install minitest` in order to install 5.x. Afterwards it works as expected in the text.
+
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
 
