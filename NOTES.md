@@ -32,7 +32,6 @@ This is because most users at this point will have minitest 4.7.5 installed. The
 
 #### PDF Page 69
 * issues running rspec. On OS X I had to update the version of libxml installed https://gist.github.com/vparihar01/5856524
-* rspec by default runs the test in `/spec/` directory. Rails 4 has the `/test/` directory by default. Either add instructions for changing the default or change the line to be run to `rspec test`.
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
