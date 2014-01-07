@@ -74,6 +74,7 @@ your tests. you can use to run our tests on." wut?
 
 #### PDF Page 119
 * code block is missing closing <p> tag like on page 84
+
 #### PDF Page 123
 * the error message description
 __expected there to be content "Project has not been updated." in ...__
