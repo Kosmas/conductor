@@ -67,6 +67,11 @@ __expected to find text "Name can't be blank" in ...__
 * grammar: 3rd paragraph from the top "using a gem called factory_girl, as well as a way to make a way to make
 standard controllers a lot neater." -> "using a gem called factory_girl, as well as a way to make standard controllers a lot neater."
 
+#### PDF Page 112
+* grammar: section 4.1.1 Factory girl "Factories define a bunch of default
+values for an object, allowing you to easily craft example objects you can use in
+your tests. you can use to run our tests on." wut?
+
 #### PDF Page 123
 * the error message description
 __expected there to be content "Project has not been updated." in ...__
