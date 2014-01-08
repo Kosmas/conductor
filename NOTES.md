@@ -85,6 +85,9 @@ __expected to find text "Projects has not been updated." in ...__
 #### PDF Page 127
 * __Done! Now you have the full support for CRUD operations in pour ProjectsController__ What does pour mean? (for?, poor?)
 
+#### PDF Page 132
+* typo: `find_project` should be `set_project`
+
 #### PDF Page 133
 * __You can also remove the first line of update and destroy actions as well.__ already mentioned in previous page 135
 
