@@ -112,6 +112,9 @@ __expected to find text__
 * In listing 5.9 the following has the brackets missing after have_content:
  __have_content "Ticket has been updated."__
 
+#### PDF Page 161
+* listing 5.10 `render action: 'edit'` throughout the text we've been doing `render 'edit'` for rendering a view from the controller. Please add a note indicating that this is equivalent syntax.
+
 #### PDF Page 168
 * __gem 'bcrypt-ruby', '~> 3.0.0'__
 should be
