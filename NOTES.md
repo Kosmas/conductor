@@ -80,7 +80,6 @@ your tests. you can use to run our tests on." wut?
 __expected there to be content "Project has not been updated." in ...__
 shouuld be
 __expected to find text "Projects has not been updated." in ...__
-* listing 4.11 line `render "edit"` does not work for me. `render edit_project_path` does work. Reviewing what another rails 4 application generates `render action: 'edit'` also works.
 
 #### PDF Page 127
 * __Done! Now you have the full support for CRUD operations in pour ProjectsController__ What does pour mean? (for?, poor?)
