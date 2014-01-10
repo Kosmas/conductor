@@ -2,7 +2,9 @@
 The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. This repository is not my original work, but rather, me working through the pre-release version of the book. Suggestions and issues with the pre-release noted below.
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v11
+### MEAP v12
+
+<!--
 
 #### PDF Page 6
 * The .rvmrc has been deprecated in favour of .ruby-version and .ruby-gemse
@@ -841,3 +843,4 @@ end
 
 #### PDF Page 378
 * This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
+-->
