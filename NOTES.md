@@ -4,33 +4,20 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v12
 
-<!--
 
 #### PDF Page 6
 * The .rvmrc has been deprecated in favour of .ruby-version and .ruby-gemse
 
 #### PDF Page 7
-* The rvm use --default 1.9.3 should be rvm use --default ruby-1.9.3
+* The rvm use --default 2.0.0 should be rvm use --default ruby-2.0.0
 * Suggestion : Would the use or mention of rvm gemsets be useful? 
 
 ```
-rvm gemset create rails4_0_0 
-rvm gemset use rails4_0_0  
-gem install rails -v 4.0.0
+rvm gemset create rails4_0_2
+rvm gemset use rails4_0_2
+gem install rails -v 4.0.2
 
 ```
-
-#### PDF Page 28
-* Rails 4 generates code using `update` the text on this page references `update_attributes` which doesn't exist anymore.
-
-#### PDF Page 40
-* Running the given code provides a different error 
-
-> .rvm/gems/ruby-2.0.0-p0/gems/minitest-4.7.5/lib/minitest/unit.rb:19:in 'const_missing': uninitialized
-> constant MiniTest::Test (NameError)
->	from bacon_test.rb:3:in `<main>'
-
-This is because most users at this point will have minitest 4.7.5 installed. There should be an instruction to run `sudo gem install minitest` in order to install 5.x. Afterwards it works as expected in the text.
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
@@ -43,9 +30,6 @@ This is because most users at this point will have minitest 4.7.5 installed. The
 
 #### PDF Page 92
 * The text __is quite the interesting file__ should be __is quite an interesting file__
-
-#### PDF Page 98
-* The text __find__ and __have_content__ should be __page__ and __have_title__
 
 #### PDF Page 99
 * The text __expect(find("title"))__ should be __expect(page)__
@@ -190,12 +174,6 @@ end
      get '/signout', to: 'sessions#destroy'
 ```
 
-#### PDF Page 177
-* in the error message
-__Updating a project__
-should be
-__Updating a profile__
-
 #### PDF Page 184
 * Suggestion:
 Would it better in the spec to specify the user as an instance variable that can be used to test against the email, in order to be independent of the factory user definition?
@@ -227,7 +205,7 @@ __expected there to be text__
 should be
 __expected to find text__
 
-#### PDF Page 185
+#### PDF Page 186
 * in the error message
 __undefined local variable or method__
 should be
@@ -244,7 +222,7 @@ __expected there to be content__
 should be
 __expected to find text__
 
-#### PDF Page 192
+#### PDF Page 191
 * Section 6.7 listing should include two tickets instead of 1 as defined in listing 5.6
 
 #### PDF Page 194
@@ -256,6 +234,8 @@ __expected to find text__
 __22 examples, 0 failures__
 should be
 __23 examples, 0 failures__
+
+<!--
 
 #### PDF Page 201
 __Create projects_controller_spec.rb__ is already created in previous chapters.
@@ -843,4 +823,67 @@ end
 
 #### PDF Page 378
 * This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
+
+
+#### PDF Page 379
+* should the integration be features?
+___spec/integration/creating_comments_spec.rb___
+should be
+___spec/features/creating_comments_spec.rb___
+
+* missing rspec line. The first line before filling in Text should be:
+___click_link ticket.title
+
+* ruby hash syntax:
+___:with => 'This ...'___
+should be
+___with: 'This ....'___
+
+___:from => 'State'___
+should be
+___from: 'State'___
+
+* new rspec syntax
+___page.should___
+should be
+___expect(page).to___
+
+#### PDF Page 380
+* rspec error message
+___cannot select option, no select box with id, name,or label 'State' found___
+should be
+___Unable to find select box "State"___
+
+* shouldn't the select drop down box be created before creating the model? (listing 10.10)
+
+*  cucumber step? 'I select' step
+
+#### PDF Page 381
+* the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
+
+#### PDF Page 385
+* old factory girl call used:
+___Factory(:state, :name => "Open")___
+should be
+___FactoryGirl.create(:state, name: 'Open')___
+
+* wrong spec name
+___spec/integration/creating_comments.rb___
+should be
+___spec/features/creating_comments.rb___
+
+* wrong mass_assignment error as this has become strong parameters in Rails 4
+
+#### PDF Page 386
+* wrong attr_accessible property (see above) as this has become strong parameters in Rails 4
+
+
+#### PDF Page 387, 389
+* Cucumber test?
+___And I should see "Open" within "#ticket .state"___
+
+#### PDF Page 390
+* Cucumber test?
+___Given there is a state called...”___
 -->
+
