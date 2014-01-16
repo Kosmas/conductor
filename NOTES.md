@@ -410,7 +410,6 @@ ___44 examples, 0 faulures___
 
 ### Chapter 8 Fine-Grained Access
 
-<!--
 
 #### PDF Page 259
 * There is no failure if the spec for 'displaying an error for a missing project' mentioned in page 202 is inside the 'standard users' context
@@ -531,6 +530,10 @@ ___And I follow "Permissions"___
 * figure 8.5 signed in as ___ticketee@example.com___ should be ___admin@example.com___ that was set in the seeds file.
 * There should only be one project from the seeds file and not the second (Top secret project)
 
+
+### Chapter 9 Flle uploading
+
+
 #### PDF Page 323
 * listing 9.3 shows a different section for created by from previous chapter and the edit and delete links are missing:
 
@@ -581,23 +584,7 @@ should be
 
 ```
 
-#### PDF Page 324
-* current version of CarrierWve is 0.9.0
-___gem 'carrierwave', '0.8.0'___
-should be
-___gem 'carrierwave', '~> 0.9.0'___
-
-#### PDF Page 325
-* typo in first paragraph in :
-___ and gives four application the ability to accept and process this file.___
-
-#### PDF Page 326, 327
-* typo in the directory before code listing:
-___public/system___
-should be
-___public/uploads___
-
-#### PDF Page 334
+#### PDF Page 333
 * cucumber test lefover? 
 ___And I follow "New Ticket"___
 
@@ -618,7 +605,7 @@ Failure/Error: click_button 'Create Ticket'
   # ./spec/features/creating_tickets_spec.rb:52:in `block (2 levels) in <top (required)>'
 ```
 
-#### PDF Page 345
+#### PDF Page 344
 * the user is created from the seeds file and the:
 ___ticketee@example.com___
 should be
@@ -626,7 +613,7 @@ ___admin@example.com___
 
 
 * the link for the file:
-___http://localhost:3000/system/assets/5/original/spin.txt?1282564953___
+___http://localhost:3000/uploads/5/original/spin.txt?1282564953___
 should be:
 ___http://localhost:3000/uploads/asset/asset/1/spin.txt___
 
@@ -656,28 +643,7 @@ ___gem 'database_cleaner', '1.2.0'___
 And I follow "Add another file"
 ```
 
-#### PDF Page 353
-* ruby hash syntax:
-
-```ruby
-<%= link_to "Add another file",
-new_file_path,
-:remote => true,
-:update => "files",
-:position => "after" %>
-```
-should be
-
-```ruby
-<%= link_to "Add another file",
-new_file_path,
-remote: true,
-update: "files",
-position: "after" %>
-
-```
-
-#### PDF Page 354, 355
+#### PDF Page 354
 * ruby hash syntax:
 
 ```ruby
@@ -689,32 +655,13 @@ should be
 child_index: number 
 ```
 
-#### PDF Page 359
-* missing parenthesis from coffescript:
-
-```ruby
-$->
-$('a#add_another_file').click(->___
-```
-
-should be:
-
-```ruby
-$(->
-$('a#add_another_file').click(->
-```
-
-#### PDF Page 362
-* Typo
-___http://localhost:3000/assets/tackets.js___
-should be
-___http://localhost:3000/assets/tickets.js___
-
-#### PDF Page 364
+#### PDF Page 363
 * typo for Gemfile
 ___ require 'turbolinks' line from your Gemfile___
 should be
-___ require 'turbolinks' line from your Gemfile___
+__gem 'turblolinks' line from your Germfile___
+
+<!--
 
 #### PDF Page 368
 * should it be a features test instead of an integrations test? Rspec does not support integration tests and the sign_in_as! does not work with integration tests.
