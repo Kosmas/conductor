@@ -1,8 +1,12 @@
 # Rails 4 in Action
 The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. 
 
+
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v12
+
+
+### Chapter 1 Ruby on Rails, the framework
 
 
 #### PDF Page 6
@@ -18,6 +22,11 @@ rvm gemset use rails4_0_2
 gem install rails -v 4.0.2
 
 ```
+
+### Chapter 2 Testing saves your bacon
+
+### Chapter 3 Developing a real Rails application
+
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
@@ -46,6 +55,10 @@ __expected there to be content "Name can't be blank" in ...__
 shouuld be
 __expected to find text "Name can't be blank" in ...__
 
+
+### Chapter 4 Oh CRUD!
+
+
 #### PDF Page 123
 * the error message description
 __expected there to be content "Project has not been updated." in ...__
@@ -57,6 +70,10 @@ __expected to find text "Projects has not been updated." in ...__
 
 #### PDF Page 133
 * __You can also remove the first line of update and destroy actions as well.__ already mentioned in previous page 135
+
+
+### Chapter 5 Nested Resources
+
 
 #### PDF Page 142
 * the error message description
@@ -79,6 +96,10 @@ __expected to find text__
 #### PDF Page 158
 * In listing 5.9 the following has the brackets missing after have_content:
  __have_content "Ticket has been updated."__
+
+
+### Chapter 6 Authentication
+
 
 #### PDF Page 168
 * __gem 'bcrypt-ruby', '~> 3.0.0'__
@@ -235,7 +256,9 @@ __22 examples, 0 failures__
 should be
 __23 examples, 0 failures__
 
-<!--
+
+### Chapter 7 Basic Access Control
+
 
 #### PDF Page 201
 __Create projects_controller_spec.rb__ is already created in previous chapters.
@@ -268,7 +291,7 @@ __Create projects_controller_spec.rb__ is already created in previous chapters.
    end
 ```
 
-#### PDF Page 204
+#### PDF Page 208
 * in the spec results text
 ___26 examples, 0 failures___
 should be
@@ -384,6 +407,10 @@ ___42 examples, 0 failures___
 ___43 examples, 0 failures___
 should be
 ___44 examples, 0 faulures___
+
+### Chapter 8 Fine-Grained Access
+
+<!--
 
 #### PDF Page 259
 * There is no failure if the spec for 'displaying an error for a missing project' mentioned in page 202 is inside the 'standard users' context
@@ -886,4 +913,3 @@ ___And I should see "Open" within "#ticket .state"___
 * Cucumber test?
 ___Given there is a state called...”___
 -->
-
