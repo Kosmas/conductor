@@ -661,7 +661,11 @@ ___ require 'turbolinks' line from your Gemfile___
 should be
 __gem 'turblolinks' line from your Germfile___
 
-<!--
+
+### Chapter 10 Tracking State
+
+
+
 
 #### PDF Page 368
 * should it be a features test instead of an integrations test? Rspec does not support integration tests and the sign_in_as! does not work with integration tests.
@@ -676,7 +680,7 @@ ___Factory(:confirmed_user)___
 should be
 ___FactoryGirl.create(:user)___
 
-* ruby hassh syntax
+* ruby hash syntax
 ___ Factory(:ticket, :project => project, :user => user) ___
 should be
 ___ FactoryGirl.create(:ticket, project: project, user: user)___ 
@@ -730,12 +734,25 @@ should be:
   <% end %>
 ```
 
+* typo
+___Secondly, has hinted before___
+should be
+___Secondly, it has(was) hinted before___
+
+
 #### PDF Page 371
 * should the migration use the references to also create the indices and the belongs_to in the model? So:
 ___rails g model comment text:text ticket_id:integer user_id:integer___
 should be
 ___rails g model comment text:text ticket:references user:references___
 
+#### PDF Page 372
+* attr_accessible is not used anymore, as we have strong parameters
+
+#### PDF Page 373
+___spec/integration/creating_comments_spec.rb___
+should be
+___spec/features/creating_comments_spec.rb___
 
 #### PDF Page 374
 * call to non existent method authenticate_user! ?
@@ -752,6 +769,11 @@ ___render template: "tickets/show" ___
 
 
 ### PDF Page 375
+* integration should be features?
+ ___spec/integration/creating_comments_spec.rb___
+should be
+___spec/features/creating_comments_spec.rb___
+
 * Before seeing the error message for missing css there is another error:
 
 ```ruby
@@ -794,6 +816,8 @@ class CommentsController < ApplicationController
 end
 
 ```
+
+<!--
 
 #### PDF Page 378
 * This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
