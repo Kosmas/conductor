@@ -817,14 +817,12 @@ end
 
 ```
 
-<!--
-
 #### PDF Page 378
 * This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
 
 
 #### PDF Page 379
-* should the integration be features?
+* Listing 10.8, should the integration be features?
 ___spec/integration/creating_comments_spec.rb___
 should be
 ___spec/features/creating_comments_spec.rb___
@@ -859,6 +857,9 @@ ___Unable to find select box "State"___
 #### PDF Page 381
 * the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
 
+#### PDF Page 382
+* Should an index also be added for the comments in the state migrations?
+
 #### PDF Page 385
 * old factory girl call used:
 ___Factory(:state, :name => "Open")___
@@ -872,6 +873,7 @@ ___spec/features/creating_comments.rb___
 
 * wrong mass_assignment error as this has become strong parameters in Rails 4
 
+<!-- 
 #### PDF Page 386
 * wrong attr_accessible property (see above) as this has become strong parameters in Rails 4
 
