@@ -873,7 +873,7 @@ ___spec/features/creating_comments.rb___
 
 * wrong mass_assignment error as this has become strong parameters in Rails 4
 
-<!-- 
+
 #### PDF Page 386
 * wrong attr_accessible property (see above) as this has become strong parameters in Rails 4
 
@@ -882,7 +882,23 @@ ___spec/features/creating_comments.rb___
 * Cucumber test?
 ___And I should see "Open" within "#ticket .state"___
 
+#### PDF Page 389
+* old ruby has syntax
+___:to => :ticket___
+should be
+___to: :ticket___
+
+
 #### PDF Page 390
 * Cucumber test?
 ___Given there is a state called...”___
--->
+
+#### PDF Page 391
+* integration should be features in the Lisitng 10.14 title
+* page.should uses the old rspec syntax it should be expect(page).to
+* typo
+___Uou're confirming___
+should be
+___You're confirming___
+* Cucmber test 'Then I should see'
+
