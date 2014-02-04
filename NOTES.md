@@ -661,7 +661,11 @@ ___ require 'turbolinks' line from your Gemfile___
 should be
 __gem 'turblolinks' line from your Germfile___
 
-<!--
+
+### Chapter 10 Tracking State
+
+
+
 
 #### PDF Page 368
 * should it be a features test instead of an integrations test? Rspec does not support integration tests and the sign_in_as! does not work with integration tests.
@@ -676,7 +680,7 @@ ___Factory(:confirmed_user)___
 should be
 ___FactoryGirl.create(:user)___
 
-* ruby hassh syntax
+* ruby hash syntax
 ___ Factory(:ticket, :project => project, :user => user) ___
 should be
 ___ FactoryGirl.create(:ticket, project: project, user: user)___ 
@@ -730,12 +734,25 @@ should be:
   <% end %>
 ```
 
+* typo
+___Secondly, has hinted before___
+should be
+___Secondly, it has(was) hinted before___
+
+
 #### PDF Page 371
 * should the migration use the references to also create the indices and the belongs_to in the model? So:
 ___rails g model comment text:text ticket_id:integer user_id:integer___
 should be
 ___rails g model comment text:text ticket:references user:references___
 
+#### PDF Page 372
+* attr_accessible is not used anymore, as we have strong parameters
+
+#### PDF Page 373
+___spec/integration/creating_comments_spec.rb___
+should be
+___spec/features/creating_comments_spec.rb___
 
 #### PDF Page 374
 * call to non existent method authenticate_user! ?
@@ -752,6 +769,11 @@ ___render template: "tickets/show" ___
 
 
 ### PDF Page 375
+* integration should be features?
+ ___spec/integration/creating_comments_spec.rb___
+should be
+___spec/features/creating_comments_spec.rb___
+
 * Before seeing the error message for missing css there is another error:
 
 ```ruby
@@ -800,7 +822,7 @@ end
 
 
 #### PDF Page 379
-* should the integration be features?
+* Listing 10.8, should the integration be features?
 ___spec/integration/creating_comments_spec.rb___
 should be
 ___spec/features/creating_comments_spec.rb___
@@ -835,6 +857,9 @@ ___Unable to find select box "State"___
 #### PDF Page 381
 * the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
 
+#### PDF Page 382
+* Should an index also be added for the comments in the state migrations?
+
 #### PDF Page 385
 * old factory girl call used:
 ___Factory(:state, :name => "Open")___
@@ -848,6 +873,7 @@ ___spec/features/creating_comments.rb___
 
 * wrong mass_assignment error as this has become strong parameters in Rails 4
 
+
 #### PDF Page 386
 * wrong attr_accessible property (see above) as this has become strong parameters in Rails 4
 
@@ -856,7 +882,23 @@ ___spec/features/creating_comments.rb___
 * Cucumber test?
 ___And I should see "Open" within "#ticket .state"___
 
+#### PDF Page 389
+* old ruby has syntax
+___:to => :ticket___
+should be
+___to: :ticket___
+
+
 #### PDF Page 390
 * Cucumber test?
 ___Given there is a state called...”___
--->
+
+#### PDF Page 391
+* integration should be features in the Lisitng 10.14 title
+* page.should uses the old rspec syntax it should be expect(page).to
+* typo
+___Uou're confirming___
+should be
+___You're confirming___
+* Cucmber test 'Then I should see'
+
