@@ -920,5 +920,3 @@ ___Uou're confirming___
 should be
 ___You're confirming___
 * Cucmber test 'Then I should see'
-
->>>>>>> upstream/master
