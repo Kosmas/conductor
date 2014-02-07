@@ -25,8 +25,12 @@ gem install rails -v 4.0.2
 
 ### Chapter 2 Testing saves your bacon
 
+
 ### Chapter 3 Developing a real Rails application
 
+
+#### PDF Page 69
+* issues running rspec. On OS X I had to update the version of libxml installed https://gist.github.com/vparihar01/5856524
 
 #### PDF Page 83
 * Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
@@ -55,6 +59,17 @@ __expected there to be content "Name can't be blank" in ...__
 shouuld be
 __expected to find text "Name can't be blank" in ...__
 
+#### PDF Page 111
+* grammar: 3rd paragraph from the top "using a gem called factory_girl, as well as a way to make a way to make
+standard controllers a lot neater." -> "using a gem called factory_girl, as well as a way to make standard controllers a lot neater."
+
+#### PDF Page 112
+* grammar: section 4.1.1 Factory girl "Factories define a bunch of default
+values for an object, allowing you to easily craft example objects you can use in
+your tests. you can use to run our tests on." wut?
+
+#### PDF Page 119
+* code block is missing closing `<p>` tag like on page 84
 
 ### Chapter 4 Oh CRUD!
 
@@ -67,6 +82,9 @@ __expected to find text "Projects has not been updated." in ...__
 
 #### PDF Page 127
 * __Done! Now you have the full support for CRUD operations in pour ProjectsController__ What does pour mean? (for?, poor?)
+
+#### PDF Page 132
+* typo: `find_project` should be `set_project`
 
 #### PDF Page 133
 * __You can also remove the first line of update and destroy actions as well.__ already mentioned in previous page 135
@@ -97,9 +115,10 @@ __expected to find text__
 * In listing 5.9 the following has the brackets missing after have_content:
  __have_content "Ticket has been updated."__
 
+#### PDF Page 161
+* listing 5.10 `render action: 'edit'` throughout the text we've been doing `render 'edit'` for rendering a view from the controller. Please add a note indicating that this is equivalent syntax.
 
 ### Chapter 6 Authentication
-
 
 #### PDF Page 168
 * __gem 'bcrypt-ruby', '~> 3.0.0'__
@@ -114,7 +133,7 @@ should be
 __19 examples, 1 failure__
 
 #### PDF Page 174
-* in the form listing 
+* in the form listing
 __@ticket.errors__
 should be
 __@user.errors__
@@ -902,3 +921,4 @@ should be
 ___You're confirming___
 * Cucmber test 'Then I should see'
 
+>>>>>>> upstream/master
