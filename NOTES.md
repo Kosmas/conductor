@@ -138,6 +138,9 @@ __@ticket.errors__
 should be
 __@user.errors__
 
+#### PDF Page 176
+* spec/features/user_profile_spec.rb makes use of a `:user` factory that has never been defined in the text
+
 #### PDF Page 177
 * in the user profile spec
 __'Updating a project'__
