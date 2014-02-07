@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '~> 2.4.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
@@ -25,11 +25,11 @@ gem 'jquery-rails'
 #gem 'turbolinks', '~> 2.0.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.5.2'
+gem 'jbuilder', '~> 2.0.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  gem 'sdoc', '~> 0.4.0', require: false
 end
 
 # Use ActiveModel has_secure_password
@@ -45,14 +45,14 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.14.0"
+  gem "rspec-rails", "~> 2.14.1"
 end
 
 group :test do
-  gem "capybara", "2.1.0"
+  gem "capybara", "~> 2.2.1"
   gem "selenium-webdriver", "~> 2.39.0"
   gem "database_cleaner", "~> 1.2.0"
-  gem "factory_girl_rails", "~> 4.2.1"
+  gem "factory_girl_rails", "~> 4.3.0"
 end
 
 gem 'cancan', '~> 1.6.10'
