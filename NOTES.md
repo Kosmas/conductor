@@ -690,6 +690,7 @@ child_index: number
 ___ require 'turbolinks' line from your Gemfile___
 should be
 __gem 'turblolinks' line from your Germfile___
+
 <!--
 
 ### Chapter 10 Tracking State
