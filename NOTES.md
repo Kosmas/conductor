@@ -3,9 +3,9 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v12
+### MEAP v13
 
-
+<!--
 ### Chapter 1 Ruby on Rails, the framework
 
 
@@ -923,3 +923,4 @@ ___Uou're confirming___
 should be
 ___You're confirming___
 * Cucmber test 'Then I should see'
+-->
