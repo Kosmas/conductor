@@ -1,11 +1,11 @@
 # Rails 4 in Action
-The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter. 
+The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) book by [Ryan Bigg](https://twitter.com/ryanbigg), [Yehuda Katz](https://twitter.com/wycats) and [Steve Klabnik](https://twitter.com/steveklabnik) builds a ticketing/project management application in Ruby on Rails, from-the-ground-up, chapter-by-chapter.
 
 
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v13
 
-<!--
+
 ### Chapter 1 Ruby on Rails, the framework
 
 
@@ -14,7 +14,7 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 
 #### PDF Page 7
 * The rvm use --default 2.0.0 should be rvm use --default ruby-2.0.0
-* Suggestion : Would the use or mention of rvm gemsets be useful? 
+* Suggestion : Would the use or mention of rvm gemsets be useful?
 
 ```
 rvm gemset create rails4_0_2
@@ -49,7 +49,7 @@ gem install rails -v 4.0.2
 
 #### PDF Page 103
 * the error message description
-__expected there to be text "Project has not been created." in "Project has been created."__ 
+__expected there to be text "Project has not been created." in "Project has been created."__
 should be
 __expected to find text "Project has not been created." in "{:notice=>\"Project has been created.\"}"__
 
@@ -59,32 +59,37 @@ __expected there to be content "Name can't be blank" in ...__
 shouuld be
 __expected to find text "Name can't be blank" in ...__
 
+
+### Chapter 4 Oh CRUD!
+
+
 #### PDF Page 111
-* grammar: 3rd paragraph from the top "using a gem called factory_girl, as well as a way to make a way to make
-standard controllers a lot neater." -> "using a gem called factory_girl, as well as a way to make standard controllers a lot neater."
+* grammar: 3rd paragraph from the top
+__using a gem called factory_girl, as well as a way to make a way to make
+standard controllers a lot neater."__
+should be
+__"using a gem called factory_girl, as well as a way to make standard controllers a lot neater."__
 
 #### PDF Page 112
 * grammar: section 4.1.1 Factory girl "Factories define a bunch of default
 values for an object, allowing you to easily craft example objects you can use in
-your tests. you can use to run our tests on." wut?
+your tests. you can use to run our tests on."
+the last part can be ommitted: "you can use to run our tests on."
 
 #### PDF Page 119
 * code block is missing closing `<p>` tag like on page 84
-
-### Chapter 4 Oh CRUD!
-
 
 #### PDF Page 123
 * the error message description
 __expected there to be content "Project has not been updated." in ...__
 shouuld be
-__expected to find text "Projects has not been updated." in ...__
+__expected to find text "Project has not been updated." in ...__
 
 #### PDF Page 127
 * __Done! Now you have the full support for CRUD operations in pour ProjectsController__ What does pour mean? (for?, poor?)
 
 #### PDF Page 132
-* typo: `find_project` should be `set_project`
+* typo: `find_project` title in Listing 4.15 should be `set_project`
 
 #### PDF Page 133
 * __You can also remove the first line of update and destroy actions as well.__ already mentioned in previous page 135
@@ -95,7 +100,7 @@ __expected to find text "Projects has not been updated." in ...__
 
 #### PDF Page 142
 * the error message description
-__uninitialized constant Project::Ticket (NameError)__ 
+__uninitialized constant Project::Ticket (NameError)__
 should be
 __uninitialized constant Project::Ticket__
 
@@ -118,7 +123,9 @@ __expected to find text__
 #### PDF Page 161
 * listing 5.10 `render action: 'edit'` throughout the text we've been doing `render 'edit'` for rendering a view from the controller. Please add a note indicating that this is equivalent syntax.
 
+
 ### Chapter 6 Authentication
+
 
 #### PDF Page 168
 * __gem 'bcrypt-ruby', '~> 3.0.0'__
@@ -169,20 +176,20 @@ __user = User.where(name: params[:signin][:name]).first__
 
 ```ruby
    # spec/features/sign-out-spec.rb
-   
+
    require 'spec_helper'
-   
+
    feature 'signing out.' do
      scenario 'Signing out' do
       user = FactoryGirl.create(:user)
-      
+
       visit '/'
       click_link 'Sign in'
       fill_in 'Name', with: user.name
       fill_in 'Password', with: user.password
       click_button 'Sign in'
       click_link 'Sign out'
-      
+
       expect(page).to have_content('Signed out successfully')
   end
 end
@@ -190,16 +197,16 @@ end
 
 ```ruby
     # app/controllers/sessions_controller.rb
-    
+
     def destroy
       @_current_user = session[:user_id] = nil
       flash[:notice] = 'Signed out successfully.'
-      
+
       redirect_to root_url
     end
-    
+
     private
-    
+
     def current_user
       @_current_user ||= session[:user_id] && User.find_by(id: session[:user_id])
     end
@@ -207,13 +214,13 @@ end
 
 ```ruby
    # app/views/layouts/application.rb
-   
+
     <li><%= link_to 'Sign out', signout_path %></li>
 ```
 
 ```ruby
    # config/routes.rb
-   
+
      get '/signout', to: 'sessions#destroy'
 ```
 
@@ -224,7 +231,7 @@ So by doing the following changes the user email does not need to be hardcoded:
 
 ```ruby
    # spec/features/creating_tikets_spec.rb
-   
+
     ...
     @user = FactoryGirl.create(:user)
     ...
@@ -290,7 +297,7 @@ __Create projects_controller_spec.rb__ is already created in previous chapters.
 
 ```ruby
    # spec/support/authentication_helpers.rb
-   
+
    module AuthenticationHelpers
      def sign_in_as!(user)
        visit '/signin'
@@ -320,8 +327,8 @@ should be
 ___28 examples, 0 failures___
 
 #### PDF Page 209, 213, 214
-* Shouldn't the actual capybara helper have_link be used instead of custom ones? 
-like: 
+* Shouldn't the actual capybara helper have_link be used instead of custom ones?
+like:
 
 ```ruby
 expect(page).to_not have_link('New Project')
@@ -330,7 +337,7 @@ expect(page).to have_link('New Project')
 ```
 
 #### PDF Page 215
-* in the spec results 
+* in the spec results
 ___31 examples, 0 failures___
 should be
 ___36 examples, 0 failures___
@@ -386,7 +393,7 @@ not having the admin field in the strong parameters prevents the record from bei
 * log out and login as the new user
 
 #### PDF Page 232
-* Typo 
+* Typo
 ___accessable___
 should be
 ___accessible___
@@ -430,6 +437,7 @@ ___43 examples, 0 failures___
 should be
 ___44 examples, 0 faulures___
 
+
 ### Chapter 8 Fine-Grained Access
 
 
@@ -438,7 +446,7 @@ ___44 examples, 0 faulures___
 
 #### PDF Page 262
 * in the rspec results
-___expected there to be content___ 
+___expected there to be content___
 should be
 ___expected to find text___
 
@@ -484,7 +492,7 @@ should be:
 ```ruby
 expect(flash[:alert]).to eql('You cannot delete tickets from this project.')
 ```
-    
+
 #### PDF Page 289, 290
 * rspec link expectations
 ___assert_link_for "Link Name"___
@@ -515,7 +523,7 @@ ___<%= authorized?("edit tickets", @project) do %>___
 should be
 ____<% authorized?("edit tickets".to_sym, @project) do %>___
 
-#### PDF Page 294, 295
+#### PDF Page 294
 * rspec link expectations
 ___assert_link_for 'Link Name'___
 should be
@@ -607,7 +615,7 @@ should be
 ```
 
 #### PDF Page 333
-* cucumber test lefover? 
+* cucumber test lefover?
 ___And I follow "New Ticket"___
 
 #### PDF Page 334
@@ -622,7 +630,7 @@ as otherwise the following error is diplayed:
 ```ruby
 Failure/Error: click_button 'Create Ticket'
   ActiveRecord::StatementInvalid:
-  TypeError: can't cast ActionDispatch::Http::UploadedFile to string: INSERT INTO "assets" ("asset", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?)                                                                                                                                                
+  TypeError: can't cast ActionDispatch::Http::UploadedFile to string: INSERT INTO "assets" ("asset", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?)
   # ./app/controllers/tickets_controller.rb:17:in `create'
   # ./spec/features/creating_tickets_spec.rb:52:in `block (2 levels) in <top (required)>'
 ```
@@ -669,12 +677,12 @@ And I follow "Add another file"
 * ruby hash syntax:
 
 ```ruby
-:child_index => number 
+:child_index => number
 ```
 should be
 
 ```ruby
-child_index: number 
+child_index: number
 ```
 
 #### PDF Page 363
@@ -682,7 +690,7 @@ child_index: number
 ___ require 'turbolinks' line from your Gemfile___
 should be
 __gem 'turblolinks' line from your Germfile___
-
+<!--
 
 ### Chapter 10 Tracking State
 
@@ -705,7 +713,7 @@ ___FactoryGirl.create(:user)___
 * ruby hash syntax
 ___ Factory(:ticket, :project => project, :user => user) ___
 should be
-___ FactoryGirl.create(:ticket, project: project, user: user)___ 
+___ FactoryGirl.create(:ticket, project: project, user: user)___
 
 #### PDF Page 369
 * Listing 10.1 ruby hash syntax:
