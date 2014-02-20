@@ -691,217 +691,60 @@ ___ require 'turbolinks' line from your Gemfile___
 should be
 __gem 'turblolinks' line from your Germfile___
 
-<!--
 
 ### Chapter 10 Tracking State
 
 
-
-
-#### PDF Page 368
-* should it be a features test instead of an integrations test? Rspec does not support integration tests and the sign_in_as! does not work with integration tests.
-
-* Listing 10.1 call to factory girl uses old syntax:
-___Factory(:object)___
-should be
-___FactoryGirl.create(:boject)___
-
-* on the same listing confirmed_user should be changed to user as there is no factory for confirmed_user:
-___Factory(:confirmed_user)___
-should be
-___FactoryGirl.create(:user)___
-
-* ruby hash syntax
-___ Factory(:ticket, :project => project, :user => user) ___
-should be
-___ FactoryGirl.create(:ticket, project: project, user: user)___
-
-#### PDF Page 369
-* Listing 10.1 ruby hash syntax:
-___fill_in "Text", :with => "Added a comment!"___
-should be
-___fill_in "Text", with: "Added a comment!"___
-
-* rspec new syntax:
-___page.should have_content("Comment has been created.")___
-should be
-___expect(page).to have_content('Comment has been created.')___
-
-* rspec new syntax:
-___page.should have_content("Added a comment!")___
-should be
-___expect(page).to have_content("Added a comment!")___
-
-* rspec new syntax:
-___page.should have_content("Comment has not been created.")___
-should be
-___expect(page).to have_content("Comment has not been created.")___
-
-* rspec enw syntax:
-___page.should have_content("Text can't be blank")___
-should be
-___expect(page).to have_content("Text can't be blank")___
-
-#### PDF Page 370
-* the error messages section is not correct:
-
-```ruby
-<%= f.error_messages %>
-```
-
-should be:
-
-```ruby
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-        <% @comment.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-```
-
+#### PDF Page 371
 * typo
 ___Secondly, has hinted before___
 should be
 ___Secondly, it has(was) hinted before___
 
-
-#### PDF Page 371
-* should the migration use the references to also create the indices and the belongs_to in the model? So:
-___rails g model comment text:text ticket_id:integer user_id:integer___
-should be
-___rails g model comment text:text ticket:references user:references___
-
-#### PDF Page 372
-* attr_accessible is not used anymore, as we have strong parameters
-
-#### PDF Page 373
-___spec/integration/creating_comments_spec.rb___
-should be
-___spec/features/creating_comments_spec.rb___
-
-#### PDF Page 374
-* call to non existent method authenticate_user! ?
-___before_filter :authenticate_user!___
-should be
-___before_filter :require_signin!___
-
-* ruby hash syntax:
-___render :template => "tickets/show" ___
-should be
-___render template: "tickets/show" ___
-
+#### PDF Page 375, 376
 * typo ? <co tags not needed
-
-
-### PDF Page 375
-* integration should be features?
- ___spec/integration/creating_comments_spec.rb___
-should be
-___spec/features/creating_comments_spec.rb___
-
-* Before seeing the error message for missing css there is another error:
-
-```ruby
- 1) Creating comments Creating a comment
-     Failure/Error: click_button 'Create Comment'
-     ActiveModel::ForbiddenAttributesError:
-       ActiveModel::ForbiddenAttributesError
-     # ./app/controllers/comments_controller.rb:6:in `create'
-     # ./spec/features/creating_comments_spec.rb:19:in `block (2 levels) in <top (required)>'
-```
-
-since we need to add strong parameters with the comment_params method
-
-```ruby
-class CommentsController < ApplicationController
-  before_filter :require_signin!
-  before_filter :find_ticket
-
-  def create
-    @comment = @ticket.comments.build(comment_params)
-    @comment.user = current_user
-    if @comment.save
-      flash[:notice] = 'Comment has been created.'
-      redirect_to [@ticket.project, @ticket]
-    else
-      flash[:alet] = 'Comment has not been created.'
-      render template: 'tickets/show'
-    end
-  end
-
-  private
-
-  def comment_params
-    params.require(:comment).permit(:text)
-  end
-
-  def find_ticket
-    @ticket = Ticket.find(params[:ticket_id])
-  end
-end
-
-```
 
 #### PDF Page 378
 * This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
 
-
-#### PDF Page 379
-* Listing 10.8, should the integration be features?
-___spec/integration/creating_comments_spec.rb___
-should be
-___spec/features/creating_comments_spec.rb___
-
-* missing rspec line. The first line before filling in Text should be:
-___click_link ticket.title
-
-* ruby hash syntax:
-___:with => 'This ...'___
-should be
-___with: 'This ....'___
-
-___:from => 'State'___
-should be
-___from: 'State'___
-
-* new rspec syntax
-___page.should___
-should be
-___expect(page).to___
-
 #### PDF Page 380
-* rspec error message
-___cannot select option, no select box with id, name,or label 'State' found___
+* typo <co tag is not needed
+* Suggestion: should we have a blank line before the first expect(page) to separate actioons from expectations as done previously?
+* rspec error:
+__:from => "State"__
 should be
-___Unable to find select box "State"___
-
-* shouldn't the select drop down box be created before creating the model? (listing 10.10)
-
+__from: "State"__
 *  cucumber step? 'I select' step
 
 #### PDF Page 381
-* the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
+* shouldn't the select drop down box be created before creating the model? (listing 10.10)
 
 #### PDF Page 382
+* the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
+
+#### PDF Page 383
 * Should an index also be added for the comments in the state migrations?
 
+#### PDF Page 384
+* type <co tags not needed (listing 10.10)
+
 #### PDF Page 385
-* old factory girl call used:
-___Factory(:state, :name => "Open")___
+* rspec error
+__cannot select option, no option with text__
 should be
-___FactoryGirl.create(:state, name: 'Open')___
+__Unable to find option "Open"__
 
-* wrong spec name
-___spec/integration/creating_comments.rb___
+#### PDF Page 387
+* rspec error
+__expected to find text "Open" in ""__
 should be
-___spec/features/creating_comments.rb___
+__Unable to find css "#ticket .state"__
 
+
+<!--
+
+
+#### PDF Page 385
 * wrong mass_assignment error as this has become strong parameters in Rails 4
 
 
