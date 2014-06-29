@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1.1'
+gem 'rails', '~> 4.1.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -45,13 +45,13 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.14.2"
+  gem "rspec-rails", "~> 3.0.0"
 end
 
 group :test do
   gem "capybara", "~> 2.2.1"
-  gem "selenium-webdriver", "~> 2.41.0"
-  gem "database_cleaner", "~> 1.2.0"
+  gem "selenium-webdriver", "~> 2.42.0"
+  gem "database_cleaner", "~> 1.3.0"
   gem "factory_girl_rails", "~> 4.4.1"
 end
 
