@@ -50,7 +50,7 @@ class TicketsController < ApplicationController
   end
 
   private
-   
+
   def set_project
     @project = Project.for(current_user).find(params[:project_id])
     rescue ActiveRecord::RecordNotFound

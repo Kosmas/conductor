@@ -60,4 +60,3 @@ feature 'Creating Tickets' do
     end
   end
 end
-

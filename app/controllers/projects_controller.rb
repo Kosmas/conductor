@@ -37,7 +37,7 @@ class ProjectsController < ApplicationController
     else
       flash[:alert] = "Project has not been updated."
       render "edit"
-    end 
+    end
   end
 
   def destroy
