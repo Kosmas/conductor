@@ -20,6 +20,7 @@ excludes:
 rules:
   documentation:
     except:
+      - spec/**
       - db/**
       - config/deploy/**
       - config/environments/**
@@ -34,6 +35,7 @@ rules:
       - config/routes.rb
   duplication:
     except:
+      - spec/**
       - db/**
       - config/deploy/**
       - config/environments/**

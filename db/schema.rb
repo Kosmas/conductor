@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218230438) do
+ActiveRecord::Schema.define(version: 20140925142612) do
 
   create_table "assets", force: true do |t|
     t.string   "asset"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20131218230438) do
     t.datetime "updated_at"
     t.string   "content_type"
   end
+
+  add_index "assets", ["ticket_id"], name: "index_assets_on_ticket_id"
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -40,6 +42,9 @@ ActiveRecord::Schema.define(version: 20131218230438) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "permissions", ["thing_id", "thing_type"], name: "index_permissions_on_thing_id_and_thing_type"
+  add_index "permissions", ["user_id"], name: "index_permissions_on_user_id"
 
   create_table "projects", force: true do |t|
     t.string   "name"
