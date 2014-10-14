@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.5.3'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.1'
+gem 'coffee-rails', '~> 4.1.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :test do
-  gem "capybara", "~> 2.4.3"
+  gem "capybara", "~> 2.4.4"
   gem "selenium-webdriver", "~> 2.43.0"
   gem "database_cleaner", "~> 1.3.0"
   gem "factory_girl_rails", "~> 4.4.1"
