@@ -33,4 +33,8 @@ Conductor::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Remove deprecation warning after upgrade to rails 4.2.0
+  config.active_record.raise_in_transactional_callbacks = true
+
 end
