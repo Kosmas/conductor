@@ -3,9 +3,9 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v13
+### MEAP v20
 
-
+<!--
 ### Chapter 1 Ruby on Rails, the framework
 
 
@@ -740,6 +740,7 @@ __expected to find text "Open" in ""__
 should be
 __Unable to find css "#ticket .state"__
 
+-->
 
 <!--
 
