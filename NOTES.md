@@ -5,61 +5,21 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v20
 
-<!--
-### Chapter 1 Ruby on Rails, the framework
-
-
-#### PDF Page 6
-* The .rvmrc has been deprecated in favour of .ruby-version and .ruby-gemse
-
-#### PDF Page 7
-* The rvm use --default 2.0.0 should be rvm use --default ruby-2.0.0
-* Suggestion : Would the use or mention of rvm gemsets be useful?
-
-```
-rvm gemset create rails4_0_2
-rvm gemset use rails4_0_2
-gem install rails -v 4.0.2
-
-```
-
-### Chapter 2 Testing saves your bacon
-
-
 ### Chapter 3 Developing a real Rails application
 
+#### PDF Page 58
+* The links for the github repository are not there (404) errors. Should it be: https://github.com/steveklabnik/ticketee
 
-#### PDF Page 69
-* issues running rspec. On OS X I had to update the version of libxml installed https://gist.github.com/vparihar01/5856524
+#### PDF Page 61
+* rspec-rails is on version 3.2.1 currently
 
-#### PDF Page 83
-* Suggestion: Wouldn't it be better to run rake:db:test:clone to create the test database?
+#### PDF Page 66
+* Listing 3.8 should have require 'spec_helper', and feature instead of RSpec.feature if used with rspec-rails 3.2.x
 
-#### PDF Page 84
-* Listing 3.16 missing closing p tag
+#### PDF Page 67
+* Should the routing be: root 'projects#index' with single quotes as there is no interpolation.
 
-#### PDF Page 91
-* the error message description __expected there to be text__ should be __expected to find text__
-
-#### PDF Page 92
-* The text __is quite the interesting file__ should be __is quite an interesting file__
-
-#### PDF Page 99
-* The text __expect(find("title"))__ should be __expect(page)__
-
-#### PDF Page 103
-* the error message description
-__expected there to be text "Project has not been created." in "Project has been created."__
-should be
-__expected to find text "Project has not been created." in "{:notice=>\"Project has been created.\"}"__
-
-#### PDF Page 108
-* the error message description
-__expected there to be content "Name can't be blank" in ...__
-shouuld be
-__expected to find text "Name can't be blank" in ...__
-
-
+<!--
 ### Chapter 4 Oh CRUD!
 
 
