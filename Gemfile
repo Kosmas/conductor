@@ -58,3 +58,6 @@ end
 gem 'cancan', '~> 1.6.10'
 
 gem 'carrierwave', '~> 0.10.0'
+
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
