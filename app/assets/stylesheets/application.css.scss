@@ -15,6 +15,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 * {
     padding: 0;
@@ -182,4 +183,24 @@ menu, #ticket .state, .states {
 
 .comment, .new_comment {
     width: 75%;
+}
+
+.page-header {
+  position: relative;
+  padding-bottom: 0px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+ul.actions {
+  list-style-type: none;
+  position: absolute;
+  top: 4px;
+  right: 2px;
+
+  li {
+    display: inline-block;
+  }
 }
