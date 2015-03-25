@@ -59,5 +59,6 @@ gem 'cancan', '~> 1.6.10'
 
 gem 'carrierwave', '~> 0.10.0'
 
-# Bootstrap
+# Bootstrap - font awesome
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-rails', '~> 4.3.0'
