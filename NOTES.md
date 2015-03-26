@@ -5,6 +5,7 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 ## Issues - !!!WORK IN PROGRESS!!!
 ### MEAP v20
 
+
 ### Chapter 3 Developing a real Rails application
 
 #### PDF Page 58
@@ -19,42 +20,17 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 #### PDF Page 67
 * Should the routing be: root 'projects#index' with single quotes as there is no interpolation.
 
-<!--
+
 ### Chapter 4 Oh CRUD!
 
+#### PDF Page 110
+* Listing 4.3 is the class 'new' defined?
 
-#### PDF Page 111
-* grammar: 3rd paragraph from the top
-__using a gem called factory_girl, as well as a way to make a way to make
-standard controllers a lot neater."__
-should be
-__"using a gem called factory_girl, as well as a way to make standard controllers a lot neater."__
+#### PDF Page 126
+* Listing 4.16 has old hash Ruby syntax. Should be: type: :controller do.
+* Is the type needed for rspec 3.x ?
 
-#### PDF Page 112
-* grammar: section 4.1.1 Factory girl "Factories define a bunch of default
-values for an object, allowing you to easily craft example objects you can use in
-your tests. you can use to run our tests on."
-the last part can be ommitted: "you can use to run our tests on."
-
-#### PDF Page 119
-* code block is missing closing `<p>` tag like on page 84
-
-#### PDF Page 123
-* the error message description
-__expected there to be content "Project has not been updated." in ...__
-shouuld be
-__expected to find text "Project has not been updated." in ...__
-
-#### PDF Page 127
-* __Done! Now you have the full support for CRUD operations in pour ProjectsController__ What does pour mean? (for?, poor?)
-
-#### PDF Page 132
-* typo: `find_project` title in Listing 4.15 should be `set_project`
-
-#### PDF Page 133
-* __You can also remove the first line of update and destroy actions as well.__ already mentioned in previous page 135
-
-
+<!--
 ### Chapter 5 Nested Resources
 
 
