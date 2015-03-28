@@ -30,32 +30,19 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 * Listing 4.16 has old hash Ruby syntax. Should be: type: :controller do.
 * Is the type needed for rspec 3.x ?
 
-<!--
+
 ### Chapter 5 Nested Resources
 
+#### PDF Page 171
+* When running the test after creating the ticket factory the error is:
+```
+   Failure/Error: FactoryGirl.create(:ticket,
+     NoMethodError:
+       undefined method `project=' for #<Ticket:0x000000032d5200>
+```
+since there is not yet the relationhip of ticket to project (belongs_to)
 
-#### PDF Page 142
-* the error message description
-__uninitialized constant Project::Ticket (NameError)__
-should be
-__uninitialized constant Project::Ticket__
-
-#### PDF Page 148
-* the error message description
-__expected there to be content "Ticket has not been created." in [text]__
-should be
-__expected to find text "Ticket has not been created." in "{:notice=>\"Ticket has been created.\"}"__
-
-#### PDF Page 153
-* the error message description
-__expected there to be text__
-should be
-__expected to find text__
-
-#### PDF Page 158
-* In listing 5.9 the following has the brackets missing after have_content:
- __have_content "Ticket has been updated."__
-
+<!--
 #### PDF Page 161
 * listing 5.10 `render action: 'edit'` throughout the text we've been doing `render 'edit'` for rendering a view from the controller. Please add a note indicating that this is equivalent syntax.
 
