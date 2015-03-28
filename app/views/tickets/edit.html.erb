@@ -1,3 +1,8 @@
-<h2>Editing a ticket in <%= @project.name %></h2>
+<div class='page-header'>
+  <h1>
+    Edit Ticket
+    <small><%= @project.name %></small>
+  </h1>
 
-<%= render 'form' %>
+  <%= render 'form', project: @project, ticket: @ticket %>
+</div>
