@@ -5,7 +5,7 @@ class CreateTickets < ActiveRecord::Migration
       t.text :description
       t.references :project, index: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
