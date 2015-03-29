@@ -14,28 +14,31 @@
 </head>
 <body>
 
-<nav>
-  <ul>
-    <% if current_user %>
-      Signed in as <%= current_user.email %>
-      <li><%= link_to 'Sign out', signout_path, method: :delete %></li>
-      <% admins_only do %>
-        <li><%= link_to 'Admin', admin_root_path %></li>
-      <% end %>
-    <% else %>
-      <li><%= link_to 'Sign up', new_user_path %></li>
-      <li><%= link_to 'Sign in', signin_path %></li>
+  <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+    <div class='container'>
+      <div class='navbar-header'>
+        <%= link_to 'Conductor', root_path, class: 'navbar-brand' %>
+      </div>
+      <ul class='nav navbar-nav'>
+        <li class="<%= 'active' if current_page?('/') %>">
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li class="<%= 'active' if current_page?('/users/sign_up') %>">
+          <%= link_to 'Sign up', new_user_registration_path %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% flash.each do |key, message| %>
+      <div class="alert alert-<%= key %>"'>
+        <%= message %>
+      </div>
     <% end %>
-  </ul>
-</nav>
 
-<% flash.each do |key, value| %>
-  <div class='flash' id='<%= key %>'>
-    <%= value %>
+    <%= yield %>
   </div>
-<% end %>
-
-<%= yield %>
 
 </body>
 </html>
