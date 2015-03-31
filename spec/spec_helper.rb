@@ -41,4 +41,8 @@ RSpec.configure do |config|
 
   # After upgrading to rspec 3
   config.infer_spec_type_from_file_location!
+
+  # Add Warden helpers
+  config.include Warden::Test::Helpers, type: :feature
+  config.after(type: :feature) { Warden.test_reset! }
 end
