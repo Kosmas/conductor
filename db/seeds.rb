@@ -6,10 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-admin_user = User.create(email: 'admin@example.com',
-                         name: 'admin',
-                         password: 'password',
-                         password_confirmation: 'password',
-                         admin: true)
+unless User.exists?(email: 'admin@conductor.com')
+  User.create!(email: 'admin@conductor.com', password: 'password', admin: true)
+end
 
-Project.create(name: 'Conductor Beta')
+unless User.exists?(email: 'viewer@conductor.com')
+  User.create!(email: 'viewer@conductor.com', password: 'password')
+end
+
+['Vim', 'Internet Explorer'].each do |name|
+  unless Project.exists?(name: name)
+    Project.create!(name: name, description: "A sample project about #{name}")
+  end
+end
