@@ -1,4 +1,9 @@
 Conductor::Application.routes.draw do
+  namespace :admin do
+    get 'base/index'
+  end
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -33,7 +38,7 @@ Conductor::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
@@ -48,29 +53,11 @@ Conductor::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => "projects#index"
+  #root :to => "projects#index"
+  root 'projects#index'
 
   resources :projects do
     resources :tickets
   end
 
-  resources :tickets do
-    resources :comments
-  end
-
-	resources :users
-  resources :files
-
-	get '/signin', to: 'sessions#new'
-	post '/signin', to: 'sessions#create'
-	delete '/signout', to: 'sessions#destroy', as: 'signout'
-
-	namespace :admin do
-		root to: 'base#index'
-		resources :users do
-      resources :permissions
-
-      put 'permissions', to: 'permissions#set', as: 'set_permissions'
-    end
-	end
 end
