@@ -1,6 +1,6 @@
 Conductor::Application.routes.draw do
   namespace :admin do
-    root 'base/index'
+    root 'base#index'
   end
 
   devise_for :users
