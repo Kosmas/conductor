@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 feature 'Deleting projects' do
-  before do
-    sign_in_as!(FactoryGirl.create(:admin_user))
-  end
+#  before do
+#    sign_in_as!(FactoryGirl.create(:admin_user))
+#  end
 
   scenario 'Deleting a project' do
     FactoryGirl.create(:project, name: 'Vim')
@@ -12,7 +12,7 @@ feature 'Deleting projects' do
     click_link 'Vim'
     click_link 'Delete Project'
 
-    expect(page).to have_content('Project has been destroyed.')
+    expect(page).to have_content('Project has been deleted.')
 
     visit '/'
 
