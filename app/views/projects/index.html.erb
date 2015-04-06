@@ -1,10 +1,16 @@
-<% admins_only do %>
-  <%= link_to "New Project", new_project_path %>
-<% end %>
+<div class='page-header'>
+  <h1>Projects</h1>
 
-<h2>Projects</h2>
-<ul>
-  <% @projects.each do |project| %>
-    <li><%= link_to project.name, project %></li>
+  <% admins_only do %>
+    <ul class='actions'>
+      <li><%= link_to 'New Project', new_admin_project_path, class: 'new' %></li>
+    </ul>
   <% end %>
-</ul>
+</div>
+
+<div id='projects'>
+  <% @projects.each do |project| %>
+    <h2><%= link_to project.name, project %></h2>
+    <p><%= project.description %></p>
+  <% end %>
+</div>
