@@ -8,6 +8,22 @@ class Admin::UsersController < Admin::BaseController
   def show
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      flash[:notice] = 'User has been created.'
+      redirect_to admin_users_path
+    else
+      flash.now[:alert] = 'User has not been created.'
+      render 'new'
+    end
+  end
+
   def edit
   end
 
@@ -25,20 +41,15 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      flash[:notice] = 'User has been created.'
-      redirect_to admin_users_path
+  def destroy
+    if @user == current_user
+      flash[:alert] = 'You cannot delete yourself!'
     else
-      flash.now[:alert] = 'User has not been created.'
-      render 'new'
+      @user.destroy
+      flash[:notice] = 'User has been deleted.'
     end
+
+    redirect_to admin_users_path
   end
 
   private
