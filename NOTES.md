@@ -51,159 +51,19 @@ since there is not yet the relationhip of ticket to project (belongs_to)
 #### PDF Page 201
 * Closing tag %> missing from code listing for author id
 
-<!--
 
 ### Chapter 7 Basic Access Control
 
-
-#### PDF Page 201
-__Create projects_controller_spec.rb__ is already created in previous chapters.
-
-#### PDF Page 203
-* Shouldn't the authentication_helpers.rb include the previous method, so should it be like the following?
-
-```ruby
-   # spec/support/authentication_helpers.rb
-
-   module AuthenticationHelpers
-     def sign_in_as!(user)
-       visit '/signin'
-       fill_in 'Name', with: user.name
-       fill_in 'Password', with: user.password
-       click_button 'Sign in'
-       expect(page).to have_content('Signed in successfully.')
-     end
-   end
-
-   module AuthHelpers
-     def sign_in(user)
-       session[:user_id] = user.id
-     end
-   end
-
-   RSpec.configure do |c|
-     c.include AuthenticationHelpers, type: :feature
-     c.include AuthHelpers, type: :controller
-   end
-```
-
-#### PDF Page 208
-* in the spec results text
-___26 examples, 0 failures___
-should be
-___28 examples, 0 failures___
-
-#### PDF Page 209, 213, 214
-* Shouldn't the actual capybara helper have_link be used instead of custom ones?
-like:
-
-```ruby
-expect(page).to_not have_link('New Project')
-...
-expect(page).to have_link('New Project')
-```
-
-#### PDF Page 215
-* in the spec results
-___31 examples, 0 failures___
-should be
-___36 examples, 0 failures___
-
-#### PDF Page 221
-* in the spec results
-___34 examples, 0 failures___
-should be
-___39 examples, 0 failures___
-
-#### PDF Page 221
-* in the spec results
-___36 examples, 0 failures___
-should be
-___37 examples, 0 failures___
-
-#### PDF Page 223
-* user_signed_in? method is mentioned in the text but current_user is used in listing
-
-#### PDF Page 223
-* change to new ruby hash syntax
-___:to => "base#index"___
-should be
-___to: "base#index"___
-
-#### PDF Page 227
-* change to new ruby hash syntax
-___render :action => "new"___
-should be
-___render action: "new"___
-
-#### PDF Page 228
-* The error page when running the spec should not be there as the specs pass
-
-#### PDF Page 228
-* in the spec results
-___37 examples, 0 failures___
-should be
-___38 examples, 0 failures___
-
-#### PDF Page 230
-* in the rspec results
-___expected there to be content___
-should be
-___expected to find text___
-
-#### PDF Page 231
-* in the two paragraphs:
-___what gives? ....___ and ___the answer is strong parameters___
-not having the admin field in the strong parameters prevents the record from being saved, but the test will still fail as the email displayed is from the current user and not the just created one. So we would prbably do one of the following:
-* remove the check for the new user email
-* display the new user email in the flash message
-* log out and login as the new user
-
-#### PDF Page 232
-* Typo
-___accessable___
-should be
-___accessible___
-
-#### PDF Page 234
-* Shouldn't it be a good idea to enclose the user model spec for email in a describe 'email' ?
+#### PDF Page 235
+* Listing 7.21 should be <div class='page-header'> instead of <header>
 
 #### PDF Page 236
-* password_confirmation missing from the user factory
+* <header> should be <div class='page-header'> in new.html.erb
 
-#### PDF Page 240
-* the update method should be:
+#### PDF Page 243
+* <header> should be <div class="page-header"> in show.html.erb
 
-```ruby
-def update
-  if user_params[:password].blank?
-    user_params.delete(:password)
-    user_params.delete(:password_confirmation)
-  end
-
-  if @user.update_attributes(user_params)
-    flash[:notice] = 'User has been updated.'
-
-    redirect_to admin_users_path
-  else
-    flash[:alert] = 'User has not been updated.'
-
-    render action: 'edit'
-  end
-end
-
-```
-
-#### PDF Page 242
-___41 examples, 0 failures___
-should be
-___42 examples, 0 failures___
-
-#### PDF Page 246
-___43 examples, 0 failures___
-should be
-___44 examples, 0 faulures___
-
+<!--
 
 ### Chapter 8 Fine-Grained Access
 
