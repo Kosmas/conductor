@@ -1,28 +1,29 @@
 require 'spec_helper'
 
-feature 'Deleting users' do
-	let!(:admin_user) { FactoryGirl.create(:admin_user) }
-	let!(:user) { FactoryGirl.create(:user) }
+feature 'An admin can delete users' do
+  let!(:admin_user) { FactoryGirl.create(:user, :admin) }
+  let!(:user) { FactoryGirl.create(:user) }
 
-	before do 
-		sign_in_as!(admin_user)
-		visit '/'
+  before do
+    login_as(admin_user)
+    visit '/'
 
-		click_link 'Admin'
-		click_link 'Users'
-	end
+    click_link 'Admin'
+    click_link 'Users'
+  end
 
-	scenario 'Deleting a user' do
-		click_link user.email
-		click_link 'Delete User'
+  scenario 'successfully' do
+    click_link user.email
+    click_link 'Delete User'
 
-		expect(page).to have_content('User has been deleted')
-	end
+    expect(page).to have_content('User has been deleted')
+    expect(page).not_to have_content user.to_s
+  end
 
-	scenario 'Users cannot delete themselves' do
-		click_link admin_user.email
-		click_link 'Delete User'
+  scenario 'but cannot delete themselves' do
+    click_link admin_user.email
+    click_link 'Delete User'
 
-		expect(page).to have_content('You cannot delete yourself!')
-	end
+    expect(page).to have_content('You cannot delete yourself!')
+  end
 end
