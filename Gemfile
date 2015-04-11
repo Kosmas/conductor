@@ -66,3 +66,6 @@ gem 'simple_form', '~> 3.1.0'
 
 # Authentication
 gem 'devise', '~> 3.4.1'
+
+# Policies
+gem 'pundit', '~> 0.3.0'
