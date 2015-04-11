@@ -1,10 +1,7 @@
 module AuthorizationHelpers
-  def define_permission!(user, action, thing)
-    Permission.create!(user: user, action: action, thing: thing)
-  end
-
-  def check_permission_box(permission, object)
-    check "permissions_#{object.id}_#{permission}"
+  def assign_role!(user, role, project)
+    Role.where(user: user, project: project).delete_all
+    Role.create!(user: user, role: role, project: project)
   end
 end
 
