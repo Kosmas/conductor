@@ -1,9 +1,12 @@
 require 'spec_helper'
 
 feature 'Editing Projects' do
+  let(:user) { FactoryGirl.create(:user) }
+  let(:project) { FactoryGirl.create(:project, name: 'Vim') }
+
   before do
-    sign_in_as!(FactoryGirl.create(:admin_user))
-    FactoryGirl.create(:project, name: 'Vim')
+    login_as(user)
+    assign_role!(user, :viewer, project)
 
     visit '/'
     click_link 'Vim'
@@ -17,7 +20,7 @@ feature 'Editing Projects' do
     expect(page).to have_content('Project has been updated.')
   end
 
-  scenario 'Updating a project with invalid attributes is bad' do
+  scenario 'Updating a project with invalid attributes' do
     fill_in 'Name', with: ''
     click_button 'Update Project'
 
