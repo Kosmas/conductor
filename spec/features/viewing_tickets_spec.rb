@@ -9,6 +9,7 @@ feature 'Viewing tickets' do
                        title: 'Make it shiny!',
                        description: 'Gradients! Starbursts! Oh my!',
                        author: user)
+    assign_role!(user, :viewer, vim_2)
 
     internet_explorer = FactoryGirl.create(:project, name: 'Internet Explorer')
     FactoryGirl.create(:ticket,
@@ -16,7 +17,9 @@ feature 'Viewing tickets' do
                        title: 'Standards compliance',
                        description: "Isn't a joke.",
                        author: user)
+    assign_role!(user, :viewer, internet_explorer)
 
+    login_as(user)
     visit '/'
   end
 
