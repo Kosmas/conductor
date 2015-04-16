@@ -20,6 +20,11 @@ feature 'hidden links' do
       visit project_path(project)
       expect(page).not_to have_link('Delete Project')
     end
+
+    scenario 'cannot see the Edit Project link' do
+      visit project_path(project)
+      expect(page).not_to have_link('Edit Project')
+    end
   end
 
   context 'admin users' do
@@ -33,6 +38,11 @@ feature 'hidden links' do
     scenario 'can see the Delete Project link' do
       visit project_path(project)
       expect(page).to have_link('Delete Project')
+    end
+
+    scenario 'can see the Edit Project link' do
+      visit project_path(project)
+      expect(page).to have_link('Edit Project')
     end
   end
 end
