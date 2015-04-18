@@ -5,7 +5,7 @@ feature 'Creating Tickets' do
 
   before do
     project = FactoryGirl.create(:project, name: 'Mozilla Firefox')
-    assign_role!(user, :viewer, project)
+    assign_role!(user, :editor, project)
     login_as(user)
 
     visit '/'
