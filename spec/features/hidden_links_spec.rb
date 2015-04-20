@@ -4,6 +4,9 @@ feature 'hidden links' do
   let(:user) { FactoryGirl.create(:user) }
   let(:admin) { FactoryGirl.create(:user, :admin) }
   let(:project) { FactoryGirl.create(:project) }
+  let(:ticket) do
+    FactoryGirl.create(:ticket, project: project, author: user)
+  end
 
   context 'regular users' do
     before do
@@ -30,6 +33,11 @@ feature 'hidden links' do
       visit project_path(project)
       expect(page).not_to have_link('New Ticket')
     end
+
+    scenario 'cannot see the Edit Ticket link' do
+      visit project_ticket_path(project, ticket)
+      expect(page).not_to have_link('Edit Ticket')
+    end
   end
 
   context 'admin users' do
@@ -53,6 +61,11 @@ feature 'hidden links' do
     scenario 'can see the New Ticket link' do
       visit project_path(project)
       expect(page).to have_link('New Ticket')
+    end
+
+    scenario 'can see the Edit Ticket link' do
+      visit project_ticket_path(project, ticket)
+      expect(page).to have_link('Edit Ticket')
     end
   end
 end
