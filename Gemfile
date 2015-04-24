@@ -69,3 +69,6 @@ gem 'devise', '~> 3.4.1'
 
 # Policies
 gem 'pundit', '~> 1.0.0'
+
+# File uploading
+gem 'carrierwave', '~> 0.10.0'
