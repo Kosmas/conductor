@@ -63,130 +63,56 @@ since there is not yet the relationhip of ticket to project (belongs_to)
 #### PDF Page 243
 * <header> should be <div class="page-header"> in show.html.erb
 
-<!--
+
 
 ### Chapter 8 Fine-Grained Access
 
 
+#### PDF Page 255
+* In rails 4.2.1 the foreign key is automatically added to the migration like:
+```ruby
+  t.references :user, index: true, foreign_key: true
+```
+
 #### PDF Page 259
-* There is no failure if the spec for 'displaying an error for a missing project' mentioned in page 202 is inside the 'standard users' context
+* The name of the policy test file should be project_policy_spec.rb and NOT post_policy_spec.rb
+* The calls to the FactoryGirl are without brackets where before brackets were used
 
-#### PDF Page 262
-* in the rspec results
-___expected there to be content___
-should be
-___expected to find text___
+#### PDF Page 260
+* PostPolicy references should be ProjectPolicy
 
-#### PDF Page 271
-* In figure 8.3 the links 'Forgot your password', 'Did not receive confirmation instructions?' and the tick box 'Remember me' have not been added previously.
+#### PDF Page 266
+* FactoryGirl.create use without brackets.
 
-#### PDF Page 273
-* change hash syntax to 1.9
-___:id => ticket.id, :project_id => project.id___
-should be
-___id: ticket.id, project_id: project.id___
+#### PDF Page 269
+* FactoryGirl.create use without brackets.
 
-#### PDF Page 277
-* convert rspec expectations to new expect instead of should syntax
+#### PDF Page 272
+* FactoryGirl.create use without brackets.
 
-```ruby
-response.should redirect_to(project)
-message = "You cannot create tickets on this project"
-flash[:alert].should eql(message)
-```
+#### PDF Page 275
+* have_link without brackets
 
-should be
+#### PDF Page 279
+* FactoryGirl.create use without brackets
 
-```ruby
-expect(response).to redirect_to(project)
-expect(flash[:alert]).to eql('You cannot create tickets on this project')
-```
+#### PDF Page 282
+* Including require 'rspec/rails' in the spec_helper solves the problem described in the NOTE.
 
-#### PDF Page 285
-* in the before filters is the authorize_admin! needed as in previous pages was missing and tests run without it? We also have require_signing that is missing from listing 8.9
+#### PDF Page 288
+* have_link use without brackets
 
-#### PDF Page 287
-* for consistency and to be similar to previous rspecs we do not need to set the message variable, so:
+#### PDF Page 295
+* have_link use without brackets
+
+#### PDF Page 299
+* have_link use without brackets
+
+#### PDF Page 301
+* Below listing 8.43 verify_authorize should be verify_autorized
 
 
-```ruby
-message = "You cannot delete tickets from this project."
-expect(flash[:alert]).to eql(message)
-```
-
-should be:
-
-```ruby
-expect(flash[:alert]).to eql('You cannot delete tickets from this project.')
-```
-
-#### PDF Page 289, 290
-* rspec link expectations
-___assert_link_for "Link Name"___
-should be
-___expect(page).to have_link('Link Name')___
-
-#### PDF Page 290
-* the to_sym should be used as in previous code
-___<% authorized?(:"create tickets", @project) do %>___
-should be
-___<% authorized?("create tickets".to_sym, @project) do %>___
-
-#### PDF Page 291
-* comment tag missing from permissions:
-___permissions__
-should be
-___#permissions___
-
-#### PDF Page 291, 292
-* rspec link expectations
-___assert_link_for 'Link Name'___
-should be
-___expect(page).to have_link('Link Name')___
-
-#### PDF Page 293
-* the <%= tag is incorrect:
-___<%= authorized?("edit tickets", @project) do %>___
-should be
-____<% authorized?("edit tickets".to_sym, @project) do %>___
-
-#### PDF Page 294
-* rspec link expectations
-___assert_link_for 'Link Name'___
-should be
-___expect(page).to have_link('Link Name')___
-
-#### PDF Page 302
-* new ruby hash syntax
-___:method => :put___
-should be
-___method: :put___
-
-#### PDF Page 302
-* the checkbox tag is incorrect on the first listing (page 302) but correct on second listing (page 305):
-
-```ruby
-<%= check_box_tag "permissions[#{project.id}][#{name}]",
-@ability.can?(name.to_sym, project),
-@ability.can?(name.to_sym, project) %>
-```
-
-should be:
-
-```ruby
-<%= check_box_tag "permissions[#{project.id}][#{name}]",
-1,
-@ability.can?(name.to_sym, project) %>
-```
-
-#### PDF Page 304
-* cucumber test left over?
-___And I follow "Permissions"___
-
-#### PDF Page 316
-* figure 8.5 signed in as ___ticketee@example.com___ should be ___admin@example.com___ that was set in the seeds file.
-* There should only be one project from the seeds file and not the second (Top secret project)
-
+<!--
 
 ### Chapter 9 Flle uploading
 
