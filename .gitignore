@@ -19,8 +19,8 @@
 .ruby-version
 .ruby-gemset
 
-# Ignore public/uploads
-public/uploads
+# Ignore uploads
+uploads
 
 # Ignore config/secrets.yml
 config/secrets.yml
