@@ -34,7 +34,7 @@ feature "Admins can manage a user's roles" do
     click_link 'New User'
 
     fill_in 'Email', with: 'newuser@conductor.com'
-    fill_in 'Password',with: 'password'
+    fill_in 'Password', with: 'password'
 
     select 'Editor', from: 'Internet Explorer'
     click_button 'Create User'
@@ -44,4 +44,3 @@ feature "Admins can manage a user's roles" do
     expect(page).not_to have_content('Sublime Text 3')
   end
 end
-
