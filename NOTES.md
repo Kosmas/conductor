@@ -112,139 +112,26 @@ since there is not yet the relationhip of ticket to project (belongs_to)
 * Below listing 8.43 verify_authorize should be verify_autorized
 
 
-<!--
 
 ### Chapter 9 Flle uploading
 
+#### PDF Page 332
+* Lines for multiple attachment spec should be 69-86 instead of 45-62 ? so to run the spec should be :69
 
-#### PDF Page 323
-* listing 9.3 shows a different section for created by from previous chapter and the edit and delete links are missing:
+#### PDF Page 338
+* The changes to the creating_tickets_spec.rb for the Tickt #1 and .assets should also be made to the 'with an attachment' spec
 
-```ruby
-<small>Created by <%= @ticket.user.email %></small>
-<%= simple_format(@ticket.description) %>
-<% if @ticket.asset.present? %>
-  <h3>Attached File</h3>
-  <div class="asset">
-    <p>
-      <%= link_to File.basename(@ticket.asset.path),@ticket.asset.url %>
-    </p>
-    <p>
-      <small><%= number_to_human_size(@ticket.asset.size) %></small>
-    </p>
-  </div>
-<% end %>
+#### PDF Page 340
+* FactoryGirl use without brackets
 
-```
-should be
+#### PDF Page 342
+* FactoryGirl use without brackets
 
-```ruby
-<div id="ticket">
-  <h2><%= @ticket.title %></h2>
-  <span id='author'>Created by <%= @ticket.user.email %></span>
-
-  <% authorized?('edit tickets'.to_sym, @project) do %>
-    <%= link_to 'Edit Ticket', [:edit, @project, @ticket] %>
-  <% end %>
-  <% authorized?('delete tickets', @project) do %>
-    <%= link_to 'Delete Ticket', [@project, @ticket], method: :delete, data: { confirm: 'Are you sure you want to delete this ticket?' } %>
-  <% end %>
-
-  <%= simple_format(@ticket.description) %>
-
-  <% if @ticket.asset.present? %>
-    <h3>Attached File</h3>
-    <div class='asset'>
-      <p>
-        <%= link_to File.basename(@ticket.asset.path), @ticket.asset.url %>
-      </p>
-      <p>
-        <small><%= number_to_human_size(@ticket.asset.size) %></small>
-      </p>
-    </div>
-  <% end %>
-</div>
-
-```
-
-#### PDF Page 333
-* cucumber test lefover?
-___And I follow "New Ticket"___
-
-#### PDF Page 334
-* After creating the model the uploader should be moved from the ticket model to the asset model:
-
-```ruby
-mount_uploader :asset, AssetUploader
-```
-
-as otherwise the following error is diplayed:
-
-```ruby
-Failure/Error: click_button 'Create Ticket'
-  ActiveRecord::StatementInvalid:
-  TypeError: can't cast ActionDispatch::Http::UploadedFile to string: INSERT INTO "assets" ("asset", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?)
-  # ./app/controllers/tickets_controller.rb:17:in `create'
-  # ./spec/features/creating_tickets_spec.rb:52:in `block (2 levels) in <top (required)>'
-```
-
-#### PDF Page 344
-* the user is created from the seeds file and the:
-___ticketee@example.com___
-should be
-___admin@example.com___
+#### PDF Page 348
+* After removing the public/uploads from .gitignore we should delete the publi/uploads directory - rm -rf public/uploads
 
 
-* the link for the file:
-___http://localhost:3000/uploads/5/original/spin.txt?1282564953___
-should be:
-___http://localhost:3000/uploads/asset/asset/1/spin.txt___
-
-
-#### PDF Page 349
-* Should it be mentioned that if using Firefox the selenium-webdriver should be installed because of the following error?
-
-```ruby
- 1) Creating Tickets Creating a ticket with an attachment
-     Failure/Error: sign_in_as!(@user)
-     LoadError:
-       Capybara's selenium driver is unable to load `selenium-webdriver`, please install the gem and add `gem 'selenium-webdriver'` to your Gemfile if you are using bundler.
-     # ./spec/support/authentication_helpers.rb:3:in `sign_in_as!'
-     # ./spec/features/creating_tickets_spec.rb:9:in `block (2 levels) in <top (required)>'
-```
-
-#### PDF Page 350
-* current version of database cleaner is different:
-___gem 'database_cleaner', '1.0.1'___
-should be
-___gem 'database_cleaner', '1.2.0'___
-
-#### PDF Page 351
-* cucumber test?
-
-```ruby
-And I follow "Add another file"
-```
-
-#### PDF Page 354
-* ruby hash syntax:
-
-```ruby
-:child_index => number
-```
-should be
-
-```ruby
-child_index: number
-```
-
-#### PDF Page 363
-* typo for Gemfile
-___ require 'turbolinks' line from your Gemfile___
-should be
-__gem 'turblolinks' line from your Germfile___
-
-
+<!--
 ### Chapter 10 Tracking State
 
 
