@@ -13,5 +13,5 @@ Conductor::Application.routes.draw do
     resources :tickets
   end
 
-  resources :assets, only: [:show], path: :files
+  resources :assets, only: [:show, :new], path: :files
 end
