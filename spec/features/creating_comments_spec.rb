@@ -1,19 +1,19 @@
 require 'spec_helper'
 
-feature 'Creating comments' do
+feature 'Users can comment on tickets' do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:project) { FactoryGirl.create(:project) }
-  let!(:ticket) { FactoryGirl.create(:ticket, project: project, user: user) }
+  let!(:ticket) { FactoryGirl.create(:ticket, project: project, author: user) }
 
   before do
-    define_permission!(user, 'view', project)
+    login_as(user)
+    assign_role!(user, :manager, project)
 
-    sign_in_as!(user)
     visit '/'
     click_link project.name
   end
 
-  scenario 'Creating a comment' do
+  scenario 'with valid attributes' do
     click_link ticket.title
     fill_in 'Text', with: 'Added a comment!'
     click_button 'Create Comment'
@@ -24,11 +24,10 @@ feature 'Creating comments' do
     end
   end
 
-  scenario 'Creating an invalid comment' do
+  scenario 'with invalid attributes' do
     click_link ticket.title
     click_button 'Create Comment'
 
     expect(page).to have_content('Comment has not been created.')
-    expect(page).to have_content("Text can't be blank")
-  end    
+  end
 end
