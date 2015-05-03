@@ -1,26 +1,28 @@
 class CommentsController < ApplicationController
-  before_filter :require_signin!
-  before_filter :find_ticket
+  before_action :set_ticket
 
   def create
     @comment = @ticket.comments.build(comment_params)
-    @comment.user = current_user
+    @comment.author = current_user
+    authorize @comment, :create?
+
     if @comment.save
       flash[:notice] = 'Comment has been created.'
       redirect_to [@ticket.project, @ticket]
     else
-      flash[:alet] = 'Comment has not been created.'
-      render template: 'tickets/show'
+      flash.now[:alet] = 'Comment has not been created.'
+      @project = @ticket.project
+      render 'tickets/show'
     end
   end
 
   private
 
-  def comment_params
-    params.require(:comment).permit(:text)
+  def set_ticket
+    @ticket = Ticket.find(params[:ticket_id])
   end
 
-  def find_ticket
-    @ticket = Ticket.find(params[:ticket_id])
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
