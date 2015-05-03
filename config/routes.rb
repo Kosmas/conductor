@@ -13,5 +13,9 @@ Conductor::Application.routes.draw do
     resources :tickets
   end
 
+  resources :tickets, only: [] do
+    resources :comments, only: [:create]
+  end
+
   resources :assets, only: [:show, :new], path: :files
 end
