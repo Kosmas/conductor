@@ -1,4 +1,7 @@
-<%= div_for(comment) do %>
-  <b4><%= comment.user %></b4>
+<blockquote class='comment'>
   <%= simple_format(comment.text) %>
-<% end %>
+  <footer>
+    <%= time_ago_in_words(comment.created_at) %> ago
+    by <cite><%= comment.author %></cite>
+  </footer>
+</blockquote>
