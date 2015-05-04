@@ -52,4 +52,6 @@
   <% end %>
 </div>
 
-<%= render 'comments/form', ticket: @ticket, comment: @comment %>
+<% if policy(@comment).create? %>
+  <%= render 'comments/form', ticket: @ticket, comment: @comment %>
+<% end %>
