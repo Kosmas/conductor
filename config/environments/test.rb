@@ -37,4 +37,6 @@ Conductor::Application.configure do
   # Remove deprecation warning after upgrade to rails 4.2.0
   config.active_record.raise_in_transactional_callbacks = true
 
+  # Make the unpermitted parameters error more obvious
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
