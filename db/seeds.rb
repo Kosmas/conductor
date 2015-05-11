@@ -19,3 +19,10 @@ end
     Project.create!(name: name, description: "A sample project about #{name}")
   end
 end
+
+unless State.exists?
+  State.create(name: 'New', background: '#0066cc', color: 'white')
+  State.create(name: 'Open', background: '#008000', color: 'white')
+  State.create(name: 'Closed', background: '#990000', color: 'white')
+  State.create(name: 'Awesome', background: '#663399', color: 'white')
+end
