@@ -41,6 +41,7 @@
     <li>
       #<%= ticket.id %> -
       <%= link_to ticket.title, [@project, ticket] %>
+      <%= render ticket.state if ticket.state %>
     </li>
   <% end %>
 </ul>
