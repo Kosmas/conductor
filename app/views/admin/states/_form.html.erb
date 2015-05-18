@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @state] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :background %>
+  <%= f.input :color %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
