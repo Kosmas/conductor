@@ -4,6 +4,7 @@ Conductor::Application.routes.draw do
 
     resources :projects, only: [:new, :create, :destroy]
     resources :users
+    resources :states, only: [:index, :new, :create]
   end
 
   devise_for :users
