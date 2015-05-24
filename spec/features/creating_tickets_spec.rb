@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 feature 'Creating Tickets' do
+  let!(:state) { FactoryGirl.create(:state, name: 'New', default: true) }
   let(:user) { FactoryGirl.create(:user) }
 
   before do
@@ -19,6 +20,7 @@ feature 'Creating Tickets' do
     click_button 'Create Ticket'
 
     expect(page).to have_content('Ticket has been created.')
+    expect(page).to have_content('State: New')
     within("#ticket #author") do
       expect(page).to have_content("Created by #{user.email}")
     end
@@ -48,6 +50,7 @@ feature 'Creating Tickets' do
     click_button 'Create Ticket'
 
     expect(page).to have_content('Ticket has been created.')
+    expect(page).to have_content('State: New')
     within("#ticket .assets") do
       expect(page).to have_content('speed.txt')
     end
@@ -77,6 +80,7 @@ feature 'Creating Tickets' do
     click_button 'Create Ticket'
 
     expect(page).to have_content('Ticket has been created.')
+    expect(page).to have_content('State: New')
 
     within('#ticket .assets') do
       expect(page).to have_content('speed.txt')
