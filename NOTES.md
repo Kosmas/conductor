@@ -131,89 +131,59 @@ since there is not yet the relationhip of ticket to project (belongs_to)
 * After removing the public/uploads from .gitignore we should delete the publi/uploads directory - rm -rf public/uploads
 
 
-<!--
+
 ### Chapter 10 Tracking State
 
+#### PDF Page 369
+* foreign_key: true is missing from both the t.references
+* Should the
+```ruby
+  add_foreign_key :comments, :users, column: :author_id
+```
+be replaced with:
+```ruby
+  t.references :author, index: true, primary_key: :user, foreign_key: true
+```
 
-#### PDF Page 371
-* typo
-___Secondly, has hinted before___
-should be
-___Secondly, it has(was) hinted before___
+#### PDF Page 373
+* FactoryGirl use without brackets
 
-#### PDF Page 375, 376
-* typo ? <co tags not needed
-
-#### PDF Page 378
-* This is where we should add the validation to the comment model as one test should be passing now and the second should be failing. so the ___validates :text, :presence => true__ that was added in page 372 should be added here as ___validates :text, presence: true___
-
-#### PDF Page 380
-* typo <co tag is not needed
-* Suggestion: should we have a blank line before the first expect(page) to separate actioons from expectations as done previously?
-* rspec error:
-__:from => "State"__
-should be
-__from: "State"__
-*  cucumber step? 'I select' step
-
-#### PDF Page 381
-* shouldn't the select drop down box be created before creating the model? (listing 10.10)
+#### PDF Page 380, 381
+* have_heading use without brackets
 
 #### PDF Page 382
-* the line @states = State.all should also be added to the comments_controller create method as we link states with tickets AND comments
+* Shouldn't the bin/rspec be bin/rspec spec/features/hidden_links_spec.rb ?
 
 #### PDF Page 383
-* Should an index also be added for the comments in the state migrations?
-
-#### PDF Page 384
-* type <co tags not needed (listing 10.10)
-
-#### PDF Page 385
-* rspec error
-__cannot select option, no option with text__
-should be
-__Unable to find option "Open"__
-
-#### PDF Page 387
-* rspec error
-__expected to find text "Open" in ""__
-should be
-__Unable to find css "#ticket .state"__
-
--->
-
-<!--
-
-
-#### PDF Page 385
-* wrong mass_assignment error as this has become strong parameters in Rails 4
-
-
-#### PDF Page 386
-* wrong attr_accessible property (see above) as this has become strong parameters in Rails 4
-
-
-#### PDF Page 387, 389
-* Cucumber test?
-___And I should see "Open" within "#ticket .state"___
-
-#### PDF Page 389
-* old ruby has syntax
-___:to => :ticket___
-should be
-___to: :ticket___
-
+* figure ?? should be 10.4
 
 #### PDF Page 390
-* Cucumber test?
-___Given there is a state called...”___
+* listing 10.19
 
-#### PDF Page 391
-* integration should be features in the Lisitng 10.14 title
-* page.should uses the old rspec syntax it should be expect(page).to
-* typo
-___Uou're confirming___
-should be
-___You're confirming___
-* Cucmber test 'Then I should see'
--->
+#### PDF Page 390
+* There is no table listing the ticket attributes so adding the state should go below the author and the time, and maybe a table should be created? Or a div?
+
+#### PDF Page 398
+* In rails 4.2.1 the migration should be: add_reference :comments, :previous_state, index: true, foreign_key: true
+
+#### PDF Page 402
+* Look at figure ???  should be 10.11.
+
+#### PDF Page 413
+* FactoryGirl use without brackets
+
+#### PDF Page 415
+* the name of the rspec file 'spec/fatures/managing_states_spec.rb' should be 'spec/features/admin/mananging_states_spec.rb'
+
+#### PDF Page 418
+* FactoryGirl use without brackets
+* Shouldn't the test for the state also be checked in the 'with an attachment' and 'mutliple attachments' tests?
+
+#### PDF Page 424
+* figure missing ? should be 10.15
+
+#### PDF Page 425
+* Figure missing ? should be 10.16
+
+### PDF Page 428
+* Previously we have added Warden::TestHelpers. Can this one be the same?
