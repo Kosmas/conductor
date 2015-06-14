@@ -45,7 +45,7 @@ gem 'bcrypt', '~> 3.1.10'
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails", "~> 3.3.0"
+  gem "rspec-rails", "~> 3.3.1"
 end
 
 group :test do
