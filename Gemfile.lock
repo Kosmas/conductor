@@ -217,7 +217,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.5.0)
   font-awesome-rails (~> 4.3.0)
   jbuilder (~> 2.3.0)
-  jquery-rails (~> 4.0.3)
+  jquery-rails (~> 4.0.4)
   pundit (~> 1.0.1)
   rails (~> 4.2.2)
   rspec-rails (~> 3.3.1)
