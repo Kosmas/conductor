@@ -58,7 +58,7 @@ end
 gem 'cancan', '~> 1.6.10'
 
 # Bootstrap - font awesome
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails', '~> 4.3.0'
 gem 'simple_form', '~> 3.1.0'
 
