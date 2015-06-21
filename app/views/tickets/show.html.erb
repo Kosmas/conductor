@@ -47,6 +47,11 @@
       State: <%= render @ticket.state %>
     <% end %>
   </div>
+  <div id='tags'>
+    <% if @ticket.tags.any? %>
+      Tags: <%= render @ticket.tags %>
+    <% end %>
+  </div>
 </div>
 
 <div id='comments'>
