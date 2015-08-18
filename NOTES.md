@@ -3,9 +3,9 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v20
+### MEAP v22
 
-
+<!--
 ### Chapter 3 Developing a real Rails application
 
 #### PDF Page 58
@@ -187,3 +187,27 @@ be replaced with:
 
 ### PDF Page 428
 * Previously we have added Warden::TestHelpers. Can this one be the same?
+
+
+
+### Chapter 11 Tagging
+
+### PDF Page 438
+* We do not have a table listing but <div> instead.
+```ruby
+<div id="tags">
+  <% if @ticket.tags.any ? %>
+    Tags: <%= render @ticket.tags %>
+  <% end %>
+</div>
+```
+
+### PDF Page 445
+* The new test should be added at the bottom of the spec not at the bottom of the describe section
+
+### PDF Page 448
+* The attachments_attributes should be assets_attributes
+
+### PDF Page 450
+* app/policies/ticket_policy_spec.rb should be spec/policies/ticket_policy_spec.rb
+-->
