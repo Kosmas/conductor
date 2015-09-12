@@ -3,7 +3,7 @@ The **soon to be released** [Rails 4 in Action](http://www.manning.com/bigg2/) b
 
 
 ## Issues - !!!WORK IN PROGRESS!!!
-### MEAP v22
+### Final
 
 <!--
 ### Chapter 3 Developing a real Rails application
