@@ -72,4 +72,4 @@ gem 'pundit', '~> 1.0.1'
 gem 'carrierwave', '~> 0.10.0'
 
 # Nokokigiri security update
-gem 'nokogiri', '~> 1.6.7'
+gem 'nokogiri', '~> 1.6.7.1'
