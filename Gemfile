@@ -60,7 +60,7 @@ gem 'cancan', '~> 1.6.10'
 # Bootstrap - font awesome
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails', '~> 4.5.0'
-gem 'simple_form', '~> 3.2.0'
+gem 'simple_form', '~> 3.2.1'
 
 # Authentication
 gem 'devise', '~> 3.5.3'
