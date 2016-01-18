@@ -66,7 +66,7 @@ gem 'simple_form', '~> 3.2.1'
 gem 'devise', '~> 3.5.3'
 
 # Policies
-gem 'pundit', '~> 1.0.1'
+gem 'pundit', '~> 1.1.0'
 
 # File uploading
 gem 'carrierwave', '~> 0.10.0'
