@@ -10,7 +10,7 @@ gem 'sqlite3', '~> 1.3.11'
 gem 'sass-rails', '~> 5.0.4'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 2.7.2'
+gem 'uglifier', '~> 3.0.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.1.1'
