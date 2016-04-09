@@ -52,7 +52,7 @@ group :test do
   gem "capybara", "~> 2.7.0"
   gem "selenium-webdriver", "~> 2.53.0"
   gem "database_cleaner", "~> 1.5.1"
-  gem "factory_girl_rails", "~> 4.6.0"
+  gem "factory_girl_rails", "~> 4.7.0"
 end
 
 gem 'cancan', '~> 1.6.10'
