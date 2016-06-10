@@ -105,12 +105,14 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
     mimemagic (0.3.1)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
+    pkg-config (1.1.7)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -221,7 +223,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.6.3)
   jbuilder (~> 2.5.0)
   jquery-rails (~> 4.1.1)
-  nokogiri (~> 1.6.7.2)
+  nokogiri (~> 1.6.8)
   pundit (~> 1.1.0)
   rails (~> 4.2.6)
   rspec-rails (~> 3.4.2)
@@ -234,4 +236,4 @@ DEPENDENCIES
   uglifier (~> 3.0.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
