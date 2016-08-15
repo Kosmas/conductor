@@ -7,7 +7,7 @@ gem 'rails', '~> 5.0.0'
 gem 'sqlite3', '~> 1.3.11'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.5'
+gem 'sass-rails', '~> 5.0.6'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 3.0.0'
