@@ -10,7 +10,7 @@ gem 'sqlite3', '~> 1.3.12'
 gem 'sass-rails', '~> 5.0.6'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.0.2'
+gem 'uglifier', '~> 3.0.3'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
@@ -59,7 +59,7 @@ gem 'cancan', '~> 1.6.10'
 
 # Bootstrap - font awesome
 gem 'bootstrap-sass', '~> 3.3.7'
-gem 'font-awesome-rails', '~> 4.6.3.1'
+gem 'font-awesome-rails', '~> 4.7.0.0'
 gem 'simple_form', '~> 3.3.1'
 
 # Authentication
