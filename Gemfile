@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0.1'
@@ -50,7 +50,7 @@ end
 
 group :test do
   gem "capybara", "~> 2.10.1"
-  gem "selenium-webdriver", "~> 3.0.0"
+  gem "selenium-webdriver", "~> 3.0.1"
   gem "database_cleaner", "~> 1.5.3"
   gem "factory_girl_rails", "~> 4.7.0"
 end
