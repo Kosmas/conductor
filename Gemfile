@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.13'
@@ -25,7 +25,7 @@ gem 'jquery-rails', '~> 4.2.2'
 #gem 'turbolinks', '~> 2.0.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.6.1'
+gem 'jbuilder', '~> 2.6.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -49,8 +49,8 @@ group :test, :development do
 end
 
 group :test do
-  gem "capybara", "~> 2.12.0"
-  gem "selenium-webdriver", "~> 3.0.5"
+  gem "capybara", "~> 2.12.1"
+  gem "selenium-webdriver", "~> 3.0.6"
   gem "database_cleaner", "~> 1.5.3"
   gem "factory_girl_rails", "~> 4.8.0"
 end
