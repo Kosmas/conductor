@@ -69,7 +69,7 @@ gem 'devise', '~> 4.2.1'
 gem 'pundit', '~> 1.1.0'
 
 # File uploading
-gem 'carrierwave', '~> 1.0.0'
+gem 'carrierwave', '~> 1.1.0'
 
 # Nokokigiri security update
 gem 'nokogiri', '~> 1.7.1'
