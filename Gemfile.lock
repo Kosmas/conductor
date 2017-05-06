@@ -70,7 +70,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    database_cleaner (1.5.3)
+    database_cleaner (1.6.0)
     devise (4.2.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -221,7 +221,7 @@ DEPENDENCIES
   capybara (~> 2.14.0)
   carrierwave (~> 1.1.0)
   coffee-rails (~> 4.2.1)
-  database_cleaner (~> 1.5.3)
+  database_cleaner (~> 1.6.0)
   devise (~> 4.2.1)
   factory_girl_rails (~> 4.8.0)
   font-awesome-rails (~> 4.7.0.2)
