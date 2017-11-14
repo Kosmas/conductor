@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :test do
-  gem "capybara", "~> 2.15.4"
+  gem "capybara", "~> 2.16.0"
   gem "selenium-webdriver", "~> 3.7.0"
   gem "database_cleaner", "~> 1.6.2"
   gem "factory_bot_rails", "~> 4.8.2"
