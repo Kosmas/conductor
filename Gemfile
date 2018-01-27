@@ -63,7 +63,7 @@ gem 'font-awesome-rails', '~> 4.7.0.3'
 gem 'simple_form', '~> 3.5.0'
 
 # Authentication
-gem 'devise', '~> 4.4.0'
+gem 'devise', '~> 4.4.1'
 
 # Policies
 gem 'pundit', '~> 1.1.0'
